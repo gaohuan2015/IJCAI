@@ -1,0 +1,121 @@
+ \section{Association Rule Mining in SIFS}\label{sec:app}
+To generate axioms from a transaction table in SIFS, support and confidence have to be redefined. In the following, we present the novel definitions of support and confidence respectively. Then specific algorithms are proposed to mine those rules that are used for generating disjointness axioms and subclass axioms.
+
+\subsection{Definition of Support}
+In SIFS, the support of 1-itemset needs to be calculated first, which indicates how many instances belong to a concept. The support of 1-itemset can be defined as below according to the absolute support of an itemset.
+\begin{equation}
+\label{def:support for 1-itemset}
+support(\{C_{i}\}) = \sum_{k=1}^{n}(a_{ki})
+\end{equation}
+In the equation, $a_{ki}$ is the value in the $k$th row and $i$th column of a transaction table and $n$ is the number of rows. This equation shows that the support of a rule is the sum of all values in the column of $C_{i}$ in a transaction table.
+
+In order to keep downward closure property of association rule mining, the support must decrease monotonically if more concepts are added into a rule. Thus, the support of a rule like $C_{i}\rightarrow C_{j}$ or $C_{i}\rightarrow \neg C_{j}$ can be defined as below.
+\begin{equation}
+\label{def:support one concept}
+support(C_{i}\rightarrow C_{j}) = P(\{C_{i}, C_{j}\}) = \sum_{k=1}^{n}(\min(a_{ki},a_{kj}))
+\end{equation}
+%
+In the equation, $n$ indicates the number of rows in a transaction table. Besides, $a_{ki}$ indicates the value in the $k$th row and $i$th column, and $a_{kj}$ is the value in the $k$th row and $j$th column.
+%
+That is, for a rule like $C_{i}\rightarrow C_{j}$ or $C_{i}\rightarrow \neg C_{j}$, its support sums the minimal values of $a_{ki}$ and $a_{kj}$ in each row $k$.
+
+Right now, the support of a rule in SIFS is still an absolute value. This means that a user who assigns a threshold for support has to know the absolute size of the original knowledge base. To deal with this problem, we give a definition of the proportional support. In a naive way, the absolute value of the support of a 1-itemset could be used (see Definition \ref{def:support one concept}) as a denominator.
+\begin{equation}
+\label{def:ps_one_concept}
+ps(C_{i}\rightarrow C_{j}) = \frac {support(C_{i}\rightarrow C_{j})} {support(C_{i})}
+\end{equation}
+It is noted that, a concept may not have many (probabilistic) type assertions due to the incompleteness of the original knowledge base. For such concepts, we prefer to ignore them which is a commonly used strategy in association rule mining. This will speed up the mining process in SIFS since the searching space could be largely reduced.
+%
+%In this way, from Table \ref{fig:tranTableSIFS}£¬the rule $\textsf{Soccer Club} \rightarrow Person$ cannot be mined because the support of $Soccer Club$ is not enough.
+
+\subsection{Definition of Confidence}
+In the context of closed world assumption, the influence of missing data cannot be ignored when defining the confidence of a rule. It is because not considering mising data may make the confidence become larger than the actual one (see the definition of confidence given in Section \ref{sec:pre}). Thus, wrong rules could be obtained according to those confidences.
+
+
+To deal with this problem, we define the following negative rules which can be used to compute how many (probabilistic) type assertions violate those rules to be mined:
+\begin{center}
+For the rule $C_{i}\rightarrow C_{j}$, its negative rule is  $C_{i}\rightarrow \neg C_{j}$.\\
+For the rule $C_{i}\rightarrow \neg C_{j}$, its negative rule is $C_{i}\rightarrow C_{j}$.
+\end{center}
+%
+It is reasonable to use these negative rules since it is unknown whether a missing instance violates the rules to be mined or not. The proportional support can imply the possibility of the negative rules.
+
+When defining confidence of a rule, it is required to combine the support of the rule and that of its negative rule. The support of a negative rule serves as the constraint to reduce the confidence. For the rule to generate subclass axioms, Equation \ref{TrueSub} and \ref{FalseSub} are given.
+%
+Since a disjointness axiom is symmetric, the support of the rule to generate  disjointness axioms should be different with that of the rule to generate subclass axioms. We use the operator $\max$ to reflect symmetric. The support of the rule to be mined is given in Equation \ref{TrueDis} and the support of the corresponding negative rule can be seen in Equation \ref{FalseDis}.
+\begin{equation}\label{TrueSub}
+True(C_{i}\!\rightarrow \!C_{j}) \!=\!  ps(C_{i}\!\rightarrow\! C_{j})
+\end{equation}
+\begin{equation}\label{FalseSub}
+False(C_{i}\!\rightarrow \!C_{j}) \!=\! ps(C_{i}\!\rightarrow\! \neg C_{j})
+\end{equation}
+\begin{equation}\label{TrueDis}
+True(C_{i}\!\rightarrow\!\neg C_{j}) \!=\!  \max(ps(C_{i}\!\rightarrow\! \neg C_{j}),ps(C_{j}\!\rightarrow\! \neg C_{i}))
+\end{equation}
+\begin{equation}\label{FalseDis}
+False(C_{i}\!\rightarrow\!\neg C_{j}) \!=\!  \max(ps(C_{i}\!\rightarrow\!C_{j}),ps(C_{j}\!\rightarrow\! C_{i}))
+\end{equation}
+It is noted that, $True(C_{i}\!\rightarrow\!\neg C_{j})$ and $True(C_{j}\!\rightarrow\!\neg C_{i})$ are same for the rule to generate disjointness axioms.
+
+Based on the equations from \ref{TrueSub} to \ref{FalseDis}, the confidence of a rule $r$ can be defined as below:
+\begin{equation}
+\label{Confidence}
+Confidence(r) \!=\! \frac{True(r)}{True(r)+False(r)}
+\end{equation}
+In the equation, $r$ indicates a rule in the form of $C_{i}\!\rightarrow \!C_{j}$ or $C_{i}\!\rightarrow\!\neg C_{j}$. This equation normalizes the confidence not by the entire set of facts, but by the facts that support the rule $r$ together with those that violate $r$ according to what we have known.
+
+\begin{algorithm} [t]
+\footnotesize{
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+\Input{A transaction table $T$ and the thresholds $t_{sup}$, $t_{ps}$ and $t_{conf}$}
+\Output{Axioms to be generated}
+\Begin{
+    axioms =  candidate\_rules = $\{\}$\;
+
+    \ForEach{column $i$ in $T$}{
+        $support(\{C_{i}\})=\Sigma^{n}_{k=1}{a_{ki}}$\;
+    }
+    \ForEach{row $k$ in T}{
+       \ForEach{concept pair $(C_{i},C_{j})(i\neq j)$ in $T$}{
+          \If{$support(\{C_{i}\})> t_{sup}$ and $support(\{C_{j}\})> t_{1}$}{
+              $support(\{C_i, C_j\}) += \min(a_{ki}, a_{kj})$\;
+          }
+        }
+    }
+    \ForEach{concept pair $(C_{i},C_{j})(i\neq j)$ in $T$}{
+        $ps(C_{i}\rightarrow C_{j}) =  {support(\{C_{i}, C_{j}\})} /{support(\{C_{i}\})}$\;
+        \If{$ps(C_{i}\rightarrow C_{j}) > t_{ps}$}{
+           candidate\_rules.add($C_{i} \rightarrow C_{j}$, $ps(C_{i}\rightarrow C_{j})$\;
+        }
+    }
+    \ForEach{$r\in$ candidate\_rules}{
+        \If{$r==C_{i}\rightarrow C_{j}$ \& $C_{i}$ and $C_{j}$ are atomic concepts}{
+           $True =  {support(C_{i}, C_{j})}/{support(C_{i})}$\;
+           $False = {support(C_{i}, \neg C_{j})}/{support(C_{i})}$\;
+        }
+        \If{$r==C_{i}\rightarrow \neg C_{j}$ \& $C_{i}$ and $C_{j}$ are atomic concepts}{
+           $True =  \max(ps(C_{i}\rightarrow \neg C_{j}),ps(C_{j}\rightarrow\neg C_{i}))$\;
+           $False = \max(ps(C_{i}\rightarrow C_{j}),ps(C_{j}\rightarrow C_{i}))$\;
+        }
+        $Confidence = {True}/(True+False)$\;
+        \If{$Confidence > t_{conf}$}{
+            axioms.add(transRule2Axiom($r$))\;
+        }
+    }
+   \Return{axioms}\;
+  }
+\caption{Axioms Mining Algorithm}\label{alg:miningAlg}
+}
+\end{algorithm}
+
+\subsection{Rule Mining Algorithms}
+Our goal is to mine disjointness axioms and subclass axioms from an incomplete KB under OWA. The mining algorithm (see Algorithm \ref{alg:miningAlg}) takes a transaction table $T$ and three thresholds, where $t_{sup}$ and $t_{ps}$ are used to filter out those rules with low standard and proportional supports respectively and $t_{conf}$ is to prune candidate rules. The function $\textsf{transRule2Axiom}$ translates an association rule to the corresponding axiom. This algorithm can be easily extended to generate other type of axioms.
+
+Algorithm \ref{alg:miningAlg} first computes the absolute support for all 1-itemsets in the input transaction table (see lines 3-4).
+%
+From line 5 to line 8, the algorithm calculates the absolute support for those 2-itemsets whose 1-itemsets own the support greater than the threshold $t_{sup}$.
+%
+For each obtained 2-itemset, the proportional support of the corresponding rule is computed (see line 10). If the proportional support is greater than $t_{ps}$, the rule will be considered as a candidate one (see lines 11-12). The selection of candidate rules could reduce the search space and speed up the algorithm.
+%
+After obtaining the candidate rules, the confidence of each rule needs to be calculated for further filtering (see lines 13-22). For each rule $r$, it is required to check which kind of axiom the rule is suitable for generating. Line 14 and line 17 check if $r$ is in the form to generate subclass axioms or or disjointness axioms respectively. If true, the corresponding probabilities of $r$ to be true and false are computed (see lines 15-16 and lines 18-19). With the obtained probabilities, the confidence value can be obtained (see line 20). If the confidence value is greater than the threshold $t_{conf}$, rule $r$ needs to be translated to the corresponding axiom which is taken as a new generated axiom (see lines 21-22).

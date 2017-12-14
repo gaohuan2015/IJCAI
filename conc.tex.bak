@@ -1,0 +1,4 @@
+\section{Conclusion}\label{sec:con}
+In this paper, we proposed a novel approach to learning disjointness and subclass axioms from incomplete semantic data under OWA. We first applied the type inference algorithm to generate new probabilistic type assertions. We then introduced novel definitions of support and confidence using negative examples as constraints. The experiments are provided to compare our system with existing one and the results showed that SIFS-P performs better in most cases.
+
+In the future, we plan to extend the SIFS-P to learn more kinds of axioms such as the axioms with existential restriction, universal restriction and the limited extensional quantification. Besides, more datasets will be considered to test the performance of SIFS-P.

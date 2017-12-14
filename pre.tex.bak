@@ -1,0 +1,24 @@
+\section{Preliminaries}\label{sec:pre}
+In this section, we first introduce the background knowledge about knowledge base, association rule mining and type inference.
+\subsection{Knowledge Base}
+In this paper, we focus on those knowledge bases expressed with RDF statements. Each RDF statement is a triple in the the form $<s,p,o>$, where $s$, $p$ and $o$ indicate a subject, a property (or predicate) and an object respectively. For convenience, $o(s)$ is used if $p$ indicates ``rdf:type" which describes that the individual $s$ belongs to concept $o$, and $p(s,o)$ is used otherwise.
+
+Usually, a KB consists of an $ABox$ and a $TBox$. The $ABox$ includes a set of facts describing instances and their relations. The $TBox$ defines the schema information like the relations between classes, domains and ranges of properties. Our task of this paper is to mine $TBox$ information from an $ABox$. It is noted that, we use the terms knowledge base and ontology interchangeable.
+
+\subsection{Association Rule Mining}
+Association rule mining\cite{HanK2012} is a rule-based method for discovering relations between variables in large databases by constructing transaction tables. Let $\mathcal{I}=\{I_1,I_2,...,I_m\}$ be a set of items. A set of items that contain $k$ items is called a $k$-itemset. Each transaction $T$ is a nonempty set of items such that $T\subseteq \mathcal{I}$. For a set $A$ satisfying $A\subseteq T$, the transaction $T$ is said to contain $A$. An association rule is an implication of the form $A\rightarrow B$, where $A\subset \mathcal{I}$, $B \subset \mathcal{I}$, $A\cap B=\emptyset$, $A$ and $B$ are nonempty.
+
+To decide whether an association rule $A\rightarrow B$ holds or not, the measures of support and confidence are widely adopted.
+\begin{left}
+$support(A\rightarrow B)=P(A\cup B)$,\\
+$confidence(A \rightarrow B)=P(B|A) =\dfrac{support(A\cup B)}{support(A)}. $
+\end{left}
+Usually, the support of $A\rightarrow B$ is an absolute support which takes the occurrence frequency of the itemset $\{A,B\}$  as its value. Sometimes, it is also defined as a relative support which is the ratio of the absolute support and the number of all transactions in the transaction table.
+%
+Confidence of $A\rightarrow B$ is the percentage of transactions containing $A$ that also contain $B$ according to the transaction table. This is taken to be the conditional probability.
+
+From the equations we can see that, the problem of mining association rules can be reduced to that of mining frequent itemsets.
+
+\subsection{Type Inference}
+A RDF KB contains million facts, but it is still an incomplete KB in most cases. \cite{typeinference} is an statistic method to learn missing type assertions from a noisy RDF KB. For each property in a RDF KB, there is a characteristic distribution of types
+for both the subject and the object. For example the property $dbpedia-owl:location$ is used in 247,601 triples in DBpedia.  $87\%$ objects of these triples are belong to $dbpedia-owl:Place$.  Furthermore, it uses statistic method to assign a certain weigh for each each property, which reflects its capability of predicting the type. Finally, the missing type can be inferred by the weight. because each inferred type assertion have a probability, in this paper, the inferred type assertions are named probabilistic type assertions (namely PTA).

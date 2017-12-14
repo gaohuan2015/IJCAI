@@ -1,0 +1,16 @@
+\section{Introduction}
+
+Producing expressive schema information to enrich existing knowledge bases, which is the task of ontology learning or schema induction, could facilitate many semantic web tasks like ontology reasoning, logical contradiction detection, ontology mapping and object reconciliation \cite{Inductivedisjoint,VolkerFS15,NolleMCNS16}. In this paper, we focus on mining two main kinds of axioms, namely disjointness axioms and subclass axioms, and our proposed ontology learning approach could be easily extended to learn other kinds of axioms.
+
+Existing approaches to generate disjointness axioms and subclass axioms can be divided into two categories. One category is to obtain such axioms by labeling relations between two concepts manually like the work in \cite{Revision}. Obviously, it would be very tedious and even impossible when dealing with large-scale KBs.
+%
+The other category is to learn terminology axioms automatically. The work in \cite{BuhmannLW16} learns possible candidate concept expressions which are scored by positive examples and negative examples \cite{dl}. For the approaches proposed in \cite{topper2012dbpedia} and \cite{VolkerFS15}, the confidence is measured by the number of the positive examples and negative examples. This may lead to incorrect terminology axioms learned with a high confidence. The work in \cite{BelNet} and \cite{statisticschema} take missing information as negative examples and they have implemented the systems BelNet\textsuperscript{+} and GoldMiner respectively.
+
+These learning approaches often adopt Closed World Assumption (CWA) which is opposite to the assumption adopted by the semantic data (i.e., Open World Assumption, OWA)\footnote{CWA assumes the truth value of the specified and derivable statements is true, and false otherwise. The main difference between CWA and OWA is that the latter makes the assumption that the truth value of an underivable statement is unknown (i.e., neither true nor false). }.
+%
+Due to the incompleteness of the semantic data, a lot of noisy negative examples may be generated so that existing learning approaches usually fail to perform very well.
+%
+Therefore, learning high-quality disjointness axioms and subclass axioms from the semantic data still remains challenging.
+
+In this paper, we propose a novel framework based on association rules to automatically generate disjointness and subclass axioms for addressing the problem of incomplete semantic data under OWA. This framework consists of two phases. The first phase generates negative examples by a type inference algorithm \cite{typeinference}. The algorithm computes a set of type assertions by assigning a probability to indicate how much degree the instance belongs to the concept in such an assertion. In the second phase, novel definitions of support and confidence are given by considering the probabilities and specific association rule mining algorithms are proposed to generate disjointness axioms and subclass axioms. The experimental results are finally provided.
+

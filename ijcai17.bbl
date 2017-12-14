@@ -1,0 +1,73 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{B{\"{u}}hmann and Lehmann}{2012}]{universal}
+Lorenz B{\"{u}}hmann and Jens Lehmann.
+\newblock Universal {OWL} axiom enrichment for large knowledge bases.
+\newblock In {\em Proceedings of {EKAW} 2012}, pages 57--71, 2012.
+
+\bibitem[\protect\citeauthoryear{B{\"{u}}hmann \bgroup \em et al.\egroup
+  }{2016}]{BuhmannLW16}
+Lorenz B{\"{u}}hmann, Jens Lehmann, and Patrick Westphal.
+\newblock Dl-learner - {A} framework for inductive learning on the semantic
+  web.
+\newblock {\em J. Web Sem.}, 39:15--24, 2016.
+
+\bibitem[\protect\citeauthoryear{Fleischhacker and
+  V{\"o}lker}{2011}]{Inductivedisjoint}
+Daniel Fleischhacker and Johanna V{\"o}lker.
+\newblock Inductive learning of disjointness axioms.
+\newblock In {\em Proceedings of {OTM} 2011}, pages 680--697, 2011.
+
+\bibitem[\protect\citeauthoryear{Gal\'{a}rraga \bgroup \em et al.\egroup
+  }{2013}]{AMIE}
+Luis~Antonio Gal\'{a}rraga, Christina Teflioudi, Katja Hose, and Fabian
+  Suchanek.
+\newblock {AMIE}: Association rule mining under incomplete evidence in
+  ontological knowledge bases.
+\newblock In {\em Proceedings of {WWW} 2013}, pages 413--422, 2013.
+
+\bibitem[\protect\citeauthoryear{Lehmann and Hitzler}{2010}]{conceptlearn}
+Jens Lehmann and Pascal Hitzler.
+\newblock Concept learning in description logics using refinement operators.
+\newblock {\em Machine Learning}, 1-2(78):203--250, 2010.
+
+\bibitem[\protect\citeauthoryear{Meilicke \bgroup \em et al.\egroup
+  }{2008}]{Debugging}
+Christian Meilicke, Johanna V{\"{o}}lker, and Heiner Stuckenschmidt.
+\newblock Learning disjointness for debugging mappings between lightweight
+  ontologies.
+\newblock In {\em Proceedings of {EKAW} 2008}, pages 93--108, 2008.
+
+\bibitem[\protect\citeauthoryear{S \bgroup \em et al.\egroup }{2011}]{learnowl}
+Hellmann S, Lehmann J, and Auer S.
+\newblock Learning of owl class expressions on very large knowledge bases and
+  its applications.
+\newblock {\em Interoperability Semantic Services and Web Applications}, pages
+  104--130, 2011.
+
+\bibitem[\protect\citeauthoryear{T{\"o}pper \bgroup \em et al.\egroup
+  }{2012}]{topper2012dbpedia}
+Gerald T{\"o}pper, Magnus Knuth, and Harald Sack.
+\newblock Dbpedia ontology enrichment for inconsistency detection.
+\newblock In {\em Proceedings of {I-SEMANTICS} 2012}, pages 33--40, 2012.
+
+\bibitem[\protect\citeauthoryear{V{\"o}lker and
+  Niepert}{2011}]{statisticschema}
+Johanna V{\"o}lker and Mathias Niepert.
+\newblock Statistical schema induction.
+\newblock In {\em Proceedings of {ESWC} 2011}, pages 124--138, 2011.
+
+\bibitem[\protect\citeauthoryear{V{\"o}lker \bgroup \em et al.\egroup
+  }{2007}]{volker2007learning}
+Johanna V{\"o}lker, Denny Vrande{\v{c}}i{\'c}, York Sure, and Andreas Hotho.
+\newblock Learning disjointness.
+\newblock In {\em Proceedings of {ESWC} 2007}, pages 175--189, 2007.
+
+\bibitem[\protect\citeauthoryear{Zhu \bgroup \em et al.\egroup
+  }{2015}]{BelNet+}
+Man Zhu, Zhiqiang Gao, Jeff~Z. Pan, Yuting Zhao, Ying Xu, and Zhibin Quan.
+\newblock Tbox learning from incomplete data by inference in
+  belnet\textsuperscript{+}.
+\newblock {\em Knowledge-Based Systems}, 75(5):30--40, 2015.
+
+\end{thebibliography}

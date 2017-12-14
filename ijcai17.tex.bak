@@ -1,0 +1,102 @@
+%%%% ijcai17.tex
+
+\typeout{IJCAI-17 Instructions for Authors}
+
+% These are the instructions for authors for IJCAI-17.
+% They are the same as the ones for IJCAI-11 with superficical wording
+%   changes only.
+
+\documentclass{article}
+% The file ijcai17.sty is the style file for IJCAI-17 (same as ijcai07.sty).
+\usepackage{ijcai17}
+
+% Use the postscript times font!
+\usepackage{times}
+
+\usepackage{amssymb}
+\usepackage{tikz}
+%\usetikzlibrary{bayesnet}
+\usepackage{diagbox}
+\usepackage{latexsym}
+\usepackage{graphicx}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{natbib}
+\usepackage{amsthm}       %% The amsthm package provides extended theorem environments
+\usepackage{multirow}
+\usepackage{algorithmic}
+\newcommand{\dir}{\text{Dir}}
+\newcommand{\mult}{\text{Multi}}
+\newtheorem{example}{Example}
+\usepackage{amstext}
+\usepackage{hyperref}
+\newtheorem{definition}{Definition}
+%\newcommand{\upcite}[1]{\textsuperscript{\textsuperscript{\cite{#1}}}}
+%\usepackage{algorithm}
+%\usepackage{algorithmic}
+\makeatletter
+\newif\if@restonecol
+\makeatother
+\let\algorithm\relax
+\let\endalgorithm\relax
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\usepackage{enumerate}
+
+% the following package is optional:
+%\usepackage{latexsym}
+
+% Following comment is from ijcai97-submit.tex:
+% The preparation of these files was supported by Schlumberger Palo Alto
+% Research, AT\&T Bell Laboratories, and Morgan Kaufmann Publishers.
+% Shirley Jowell, of Morgan Kaufmann Publishers, and Peter F.
+% Patel-Schneider, of AT\&T Bell Laboratories collaborated on their
+% preparation.
+
+% These instructions can be modified and used in other conferences as long
+% as credit to the authors and supporting agencies is retained, this notice
+% is not changed, and further modification or reuse is not restricted.
+% Neither Shirley Jowell nor Peter F. Patel-Schneider can be listed as
+% contacts for providing assistance without their prior permission.
+
+% To use for other conferences, change references to files and the
+% conference appropriate and use other authors, contacts, publishers, and
+% organizations.
+% Also change the deadline and address for returning papers and the length and
+% page charge instructions.
+% Put where the files are available in the appropriate places.
+
+\title{Knowledge Graph Embedding With Attentional Triple Context}
+\author{Huan Gao$^{1,2}$, Jun Shi$^{1,2}$, Guilin Qi$^{3}$\\
+$^{1}$School of Computer Science and Engineering,
+Southeast University, Nanjing, China  \\
+%qiuji@njupt.edu.cn\\
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Existing ontology learning or schema induction approaches often adopt the closed world assumption which is opposite to the assumption adopted by the semantic data. This may lead to a lot of noisy negative examples so that existing learning approaches fail to perform well on such incomplete data.
+In this paper, a novel framework is proposed to automatically obtain disjointness axioms and subclass axioms from incomplete semantic data. This framework first obtains probabilistic type assertions by exploiting a type inference algorithm. Then a mining approach based on association rule mining is proposed to learn high-quality schema information. To address the incompleteness problem of semantic data, the mining model introduces novel definitions to compute the support and confidence for pruning false axioms. Our experimental evaluation shows promising results over several real-life incomplete knowledge bases like DBpedia and LUBM by comparing with existing relevant approaches.
+\end{abstract}
+
+
+
+\input{intro}
+\input{pre}
+\input{pro}
+\input{app}
+%\input{exp}
+\input{result}
+\input{rel}
+\input{conc}
+
+
+%% The file named.bst is a bibliography style file for BibTeX 0.99c
+\bibliographystyle{named}
+%\bibliographystyle{unsrt}
+\bibliography{bibOfTex}
+
+\end{document}
+
