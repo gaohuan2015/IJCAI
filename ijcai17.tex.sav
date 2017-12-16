@@ -65,15 +65,10 @@
 % page charge instructions.
 % Put where the files are available in the appropriate places.
 
-\title{Schema Induction From Incomplete Semantic Data}
-\author{Huan Gao$^{1,2}$, Guilin Qi$^{1,2}$, Qiu Ji$^{3}$\\
+\title{Knowledge Graph Embedding With Attentional Triple Context}
+\author{Huan Gao$^{1,2}$, Jun Shi$^{1,2}$, Guilin Qi$^{3}$\\
 $^{1}$School of Computer Science and Engineering,
 Southeast University, Nanjing, China  \\
-$^{2}$Key Laboratory of Computer Network and Information Integration (Southeast University)\\
-Ministry of Education, Nanjing,  China\\
-%gh,gqi@seu.edu.cn\\
-$^{3}$School of Modern Posts \& Institute of Modern Posts\\
-Nanjing University of Posts and Telecommunications, Nanjing, China\\
 %qiuji@njupt.edu.cn\\
 }
 
@@ -82,18 +77,16 @@ Nanjing University of Posts and Telecommunications, Nanjing, China\\
 \maketitle
 
 \begin{abstract}
-Existing ontology learning or schema induction approaches often adopt the closed world assumption which is opposite to the assumption adopted by the semantic data. This may lead to a lot of noisy negative examples so that existing learning approaches fail to perform well on such incomplete data.
-In this paper, a novel framework is proposed to automatically obtain disjointness axioms and subclass axioms from incomplete semantic data. This framework first obtains probabilistic type assertions by exploiting a type inference algorithm. Then a mining approach based on association rule mining is proposed to learn high-quality schema information. To address the incompleteness problem of semantic data, the mining model introduces novel definitions to compute the support and confidence for pruning false axioms. Our experimental evaluation shows promising results over several real-life incomplete knowledge bases like DBpedia and LUBM by comparing with existing relevant approaches.
+    Knowledge graph embedding can represents entities and relations with efficient low-dimensional embedding vectors, due to the outstanding performance on knowledge graph completion has led to an increase in the knowledge graph embedding research. State-of-the-art approaches treats each triple independent and aim to learn a fixed context-free embedding and always neglect structure information in knowledge graph. 
+    The ignore structure information of knowledge graph has two characters the one is it contains rich information to describe entities and relations and the other is unrelated information is still exist. In order to
 \end{abstract}
 
 
 
 \input{intro}
-\input{pre}
-\input{pro}
-\input{app}
-%\input{exp}
-\input{result}
+\input{trp}
+\input{model}
+\input{exp}
 \input{rel}
 \input{conc}
 

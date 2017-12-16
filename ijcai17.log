@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  14 DEC 2017 20:30
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  16 DEC 2017 14:01
 entering extended mode
-**C:/Users/gaohu/Desktop/IJCAI-workshop/ijcai17.tex
-(C:/Users/gaohu/Desktop/IJCAI-workshop/ijcai17.tex
+**C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
+(C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
 IJCAI-17 Instructions for Authors
@@ -22,7 +22,7 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(C:\Users\gaohu\Desktop\IJCAI-workshop\ijcai17.sty
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.sty
 Conference Style, version of 6 September 1995 (revised Nov 2010)
 \titlebox=\skip43
 Named Citation Style, version of 30 November 1994
@@ -311,7 +311,7 @@ File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
 (C:\CTEX\MiKTeX\tex\generic\pgf\frontendlayer\tikz\libraries\tikzlibrarytopaths
 .code.tex
 File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
-))) (C:\Users\gaohu\Desktop\IJCAI-workshop\diagbox.sty
+))) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\diagbox.sty
 Package: diagbox 2011/11/23 v2.0 Making table heads with diagonal lines
 
 (C:\CTEX\MiKTeX\tex\latex\pict2e\pict2e.sty
@@ -475,7 +475,7 @@ Package: amsthm 2004/08/06 v2.20
 (C:\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
 \bigstrutjot=\dimen164
 )
-(C:\Users\gaohu\Desktop\IJCAI-workshop\algorithmic.sty
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\algorithmic.sty
 Package: algorithmic 
 
 Document Style `algorithmic' - environment
@@ -610,7 +610,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \c@definition=\count147
 
-(C:\Users\gaohu\Desktop\IJCAI-workshop\algorithm2e.sty
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\algorithm2e.sty
 Package: algorithm2e 2005/10/04 v3.9 algorithms environments
 \c@AlgoLine=\count148
 
@@ -647,7 +647,7 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks37
 )
-(C:\Users\gaohu\Desktop\IJCAI-workshop\ijcai17.aux)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
 LaTeX Font Info:    ... okay on input line 75.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
@@ -696,8 +696,8 @@ LaTeX Info: Redefining \ref on input line 75.
 LaTeX Info: Redefining \pageref on input line 75.
 LaTeX Info: Redefining \nameref on input line 75.
 
-(C:\Users\gaohu\Desktop\IJCAI-workshop\ijcai17.out)
-(C:\Users\gaohu\Desktop\IJCAI-workshop\ijcai17.out)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.out)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.out)
 \@outlinefile=\write4
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
@@ -719,16 +719,20 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 78.
 
-(C:\Users\gaohu\Desktop\IJCAI-workshop\intro.tex)
-(C:\Users\gaohu\Desktop\IJCAI-workshop\trp.tex)
-(C:\Users\gaohu\Desktop\IJCAI-workshop\model.tex)
-(C:\Users\gaohu\Desktop\IJCAI-workshop\exp.tex
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\intro.tex)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\trp.tex)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\model.tex)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\exp.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 )
-(C:\Users\gaohu\Desktop\IJCAI-workshop\rel.tex)
-(C:\Users\gaohu\Desktop\IJCAI-workshop\conc.tex)
-(C:\Users\gaohu\Desktop\IJCAI-workshop\ijcai17.bbl)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\rel.tex)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\conc.tex)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.bbl
+
+Package natbib Warning: Empty `thebibliography' environment on input line 3.
+
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
  [1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
@@ -737,27 +741,27 @@ Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
 
-(C:\Users\gaohu\Desktop\IJCAI-workshop\ijcai17.aux)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
 Package rerunfilecheck Info: File `ijcai17.out' has not changed.
 (rerunfilecheck)             Checksum: 9E2BBCE039093820A62B453285305537;391.
  ) 
 Here is how much of TeX's memory you used:
- 16479 strings out of 495354
- 274249 string characters out of 3183859
- 394388 words of memory out of 3000000
- 19270 multiletter control sequences out of 15000+200000
- 22951 words of font info for 62 fonts, out of 3000000 for 9000
+ 16414 strings out of 495354
+ 273218 string characters out of 3183859
+ 389962 words of memory out of 3000000
+ 19221 multiletter control sequences out of 15000+200000
+ 19349 words of font info for 49 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,12n,55p,561b,318s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,12n,55p,1408b,318s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmmi8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
 .pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/typ
 e1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ijcai17.pdf (1 page, 71707 bytes).
+Output written on ijcai17.pdf (1 page, 59462 bytes).
 PDF statistics:
- 80 PDF objects out of 1000 (max. 8388607)
- 21 named destinations out of 1000 (max. 500000)
+ 67 PDF objects out of 1000 (max. 8388607)
+ 10 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 
