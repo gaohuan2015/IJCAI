@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  16 DEC 2017 15:08
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  20 DEC 2017 17:15
 entering extended mode
 **C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
 (C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
@@ -727,41 +727,44 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 )
 (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\rel.tex)
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\conc.tex)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\conc.tex [1{C:/CTEX/UserData/pdftex/conf
+ig/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+
+
+
+])
 (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
 )
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 98.
- [1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
-
-
+ [2
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 98.
-
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux)
+ (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 98.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 98.
 Package rerunfilecheck Info: File `ijcai17.out' has not changed.
 (rerunfilecheck)             Checksum: 9E2BBCE039093820A62B453285305537;391.
  ) 
 Here is how much of TeX's memory you used:
- 16414 strings out of 495354
- 273218 string characters out of 3183859
- 389962 words of memory out of 3000000
- 19221 multiletter control sequences out of 15000+200000
- 19349 words of font info for 49 fonts, out of 3000000 for 9000
+ 16430 strings out of 495354
+ 273377 string characters out of 3183859
+ 394962 words of memory out of 3000000
+ 19232 multiletter control sequences out of 15000+200000
+ 21366 words of font info for 60 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,12n,55p,1411b,318s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,12n,55p,1411b,320s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8
-.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/typ
-e1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on ijcai17.pdf (1 page, 59892 bytes).
+ublic/amsfonts/cm/cmmi10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/CTEX/MiKTeX/
+fonts/type1/urw/times/utmb8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.p
+fb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on ijcai17.pdf (2 pages, 72064 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
+ 75 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
  69 words of extra memory for PDF output out of 10000 (max. 10000000)
 

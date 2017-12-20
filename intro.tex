@@ -1,3 +1,13 @@
 \section{Introduction}
+Recent advances in information extraction have led to huge Knowledge graphs(KGs),such as DBpedia,YAGO,Freebase and NELL. These KGs contain facts which represent relations between entities as triples $<h,r,t>$. A triple indicate that entities $h$ and $t$ are connected by relation $r$. Even a KG contains a very large number of triples, it is still far from complete. The completeness of KGs damage their usefulness in downstream task. Knowledge graph completion or link predictions is thus important approaches for populating existing KGs.
+
+Knowledge graph embedding models for KG completion have attracted much attention, due to their outstanding performance. These embedding model is to represent entitles and relations in a KG into a low dimensional continuous vector space, such vectors contain rich semantic information, and can benefit many downstream tasks especially knowledge graph completion or linked predictions.  Whether two entities have a previously unknown relationship can be predicted by simple functions of their corresponding vectors. 
+
+Despite the success of previous approaches in KG embedding, most of them mainly model triples individually, ignore lots of information implicitly provided by the structure of the KG. In fact, triples are connected to each other and many triples around a triple could be regarded as a description of it. Recently, Several authors have addressed this issue by incorporating relation path information into model learning and have shown that the relation paths between entities in KGs provide useful information and improve KG completion. These approaches only consider relation information while miss more structure information, such as K-degree neighbors of a given entity, a connected subgraph which n could be exploited for better KB completion. For instance, the whole neighborhood of entities and a connected subgraph between two entities could provide lots of useful information for predicting the relationship between two entities.
+
+In this paper, we present a novel approach to embed a knowledge graph by utilizing the structure information called .
+
+The advantages of our approach are three-fold.1)
+
 
 
