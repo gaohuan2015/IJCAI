@@ -12,7 +12,12 @@
 
 % Use the postscript times font!
 \usepackage{times}
-
+\usepackage{booktabs} % For formal tables
+\usepackage{verbatim}
+\usepackage{fancynum}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{bm}
 \usepackage{amssymb}
 \usepackage{tikz}
 %\usetikzlibrary{bayesnet}
@@ -77,8 +82,7 @@ Southeast University, Nanjing, China  \\
 \maketitle
 
 \begin{abstract}
-    Knowledge graph embedding can represents entities and relations with efficient low-dimensional embedding vectors, due to the outstanding performance on knowledge graph completion has led to an increase in the knowledge graph embedding research. State-of-the-art approaches treats each triple independent and aim to learn a fixed context-free embedding and always neglect structure information in knowledge graph. In order to take advantages of structures in knowledge graphs 
-    The ignore structure information of knowledge graph has two characters the one is it contains rich information to describe entities and relations and the other is unrelated information is still exist. In order to
+    Knowledge graph embedding can represents entities and relations with efficient low-dimensional embedding vectors. The outstanding performance on knowledge graph completion has led to an increase in the knowledge graph embedding research. State-of-the-art knowledge graph embedding approaches treat each triple independent and neglect structure information. However, as a fact, the rich graph features in knowledge graph can be considered as contexts of a triple which contain large information to describe entities and relations. In this paper, we proposes an Attentional-Triple-Context-based knowledge Embedding model(ATCE), which formulates a local structures around a triple as a context. For each triple, two kinds of structure information are considered as its context, which we refer to \emph{as triple context} : 1) Neighbor context is the outgoing relations and neighboring entities of an entity; 2) Path context is connective relation paths between a pair of entities, both of which contains rich useful and unrelated information for entities and relations. ATCE learns embedding for entities and relations with a attention mechanism and is expected to select the useful information in triple context. The experimental results show that our model outperforms the state-of-the-art methods for link prediction and entity prediction.
 \end{abstract}
 
 

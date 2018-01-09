@@ -1,7 +1,12 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Triple Context}{}% 2
-\BOOKMARK [1][-]{section.3}{Knowledge Graph Embedding With Attentional Triple Context}{}% 3
-\BOOKMARK [1][-]{section.4}{Experiments}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Data Sets}{section.4}% 5
-\BOOKMARK [1][-]{section.5}{Related Work}{}% 6
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 7
+\BOOKMARK [2][-]{subsection.2.1}{Neighbor Context}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Path Context}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{Knowledge Graph Embedding With Attentional Triple Context}{}% 5
+\BOOKMARK [2][-]{subsection.3.1}{Model Learning}{section.3}% 6
+\BOOKMARK [1][-]{section.4}{Experiments}{}% 7
+\BOOKMARK [2][-]{subsection.4.1}{Experimental Setup}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.2}{Link Prediction}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.3}{Triple Classification}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Related Work}{}% 11
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 12

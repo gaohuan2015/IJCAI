@@ -1,5 +1,14 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: ijcai17.aux
 The style file: named.bst
-I found no \citation commands---while reading file ijcai17.aux
 Database file #1: bibOfTex.bib
-(There was 1 error message)
+Warning--I didn't find a database entry for "DBLP:conf/emnlp/WangZFC14"
+Warning--I didn't find a database entry for "DBLP:conf/nips/MikolovSCCD13"
+Warning--I didn't find a database entry for "BordesUGWY13"
+Warning--I didn't find a database entry for "Toutanova15"
+Warning--I didn't find a database entry for "WangZFC14"
+Warning--I didn't find a database entry for "LinLSLZ15"
+Warning--I didn't find a database entry for "LinLLSRL15"
+Warning--I didn't find a database entry for "FengHYZ16"
+Warning--I didn't find a database entry for "NickelRP16"
+Warning--I didn't find a database entry for "socher2013"
+(There were 10 warnings)
