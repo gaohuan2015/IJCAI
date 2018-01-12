@@ -8,11 +8,11 @@ Despite the success of previous approaches in KG embedding, most of them mainly 
 In this paper, we present a novel approach to embed a knowledge graph by utilizing the structure information called Attentional-Triple-Context-based knowledge Embedding model(ATCE) which utilizes and chooses the proper context of each triple in the knowledge graph. We define triple context consisting of neighbor context and path context, and define a new score function to evaluate the correlation between a triple and its contexts. Instead of using each triple independently, we incorporate triple context into the score function which is used to evaluate the confidence of a triple. In this way, we make use of a triple context while learning embeddings.
 
 The advantages of our approach are three-fold:
-1) We embed a triple by utilizing a local subgraph around a triple instead of a set of independent triples, and extract two kinds of context. 
+1) We embed a triple by utilizing a local subgraph around a triple instead of a set of independent triples, and extract two kinds of context.
 
 2) Based on the local structure information, we proposed a novel embedding learning approach which named ATCE and a new loss function which convert the score function in TransE to a conditional probability.
 
-3) In order to overcome the noisy data in the context of a triple, an attention mechanism in our approach are proposed to choose the proper information for embedding. In the meanwhile, the attention mechanism can learn the representation power of different neighbor entities and connective path in its context.
+3) In order to overcome the noisy data in the triple context of a triple, an attention mechanism in our approach are proposed to choose the proper information for embedding. In the meanwhile, the attention mechanism can learn the representation power of different neighbor entities and connective path in its context.
 
 Finally, We have conducted preliminary experiment on two benchmark data sets and assessed our method on link prediction task and triple classification. In the experiments we shows chosen context through the attention mechanism to improve the effectiveness of this mechanism. The experimental results show impressive improvements on predictive accuracy compared to other baselines.
 
