@@ -24,54 +24,59 @@ For the score function in Eq.~\eqref{score_function}, we use conditional probabi
     & \cdot P(t,r|C(h,r,t),h;\Theta)
   \end{split}
 \end{align}
-where the evaluation of the whole triple is decomposed into three parts. The probabilities that $h$, $t$ and $r$ appear given respective condition are determined in turn in these three parts.
+where the evaluation of the whole triple is decomposed into two parts. The probabilities that $h$, $t$ and $r$ appear given respective condition are determined in turn in these two parts.
 % $h$ is determined first based on triple context, then $t$ is determined based on $h$ and triple context, and finally $r$ likewise.
 
 The first part $P(h|C(h,r,t);\Theta)$ in Eq.~\eqref{decomposition} represents the conditional probability that $h$ is the head entity given the triple context and all the embeddings. Since whether $h$ appears is decided mostly by the neighboring structures of $h$ in the KG, we can approximate $P(h|C(h,r,t);\Theta)$ as $P(h|C_N(h);\Theta)$, where $C_N(h)$ is the \emph{neighbor context} of $h$ in the KG. The approximated probability $P(h|C_N(h);\Theta)$ can be considered as the compatibility between $h$ and its neighbor context, it is formalized as a softmax-like representation, which is also used in~\cite{DBLP:conf/emnlp/WangZFC14} and has been validated, as follows:
 \begin{align} \label{P_h}
   P(h|C_N(h);\Theta) = \frac {\exp(g_N(h, C_N(h)))} {\sum_{h' \in \mathcal{E}} \exp(g_N(h', C_N(h)))}
 \end{align}
-where $g_N(h', C_N(h))$ is the function that describes the correlation between an arbitrary entity $h'$ and entity context of the specific entity $h$. In reality, different neighbors may have different power of influence to represent $h$. In order to obtain the correlation $g_N(h', C_N(h))$, we first obtain $a_i$ which means the correlation between the $ith$ neighbor entity in $C_N(h)$ and the triple $<h',r,t>$. Inspired by score function of TransE, we substitute the neighbor entities in $C_N(h)$ for the head $h'$ in triple and then we define $a_i$ as
-$$
+where $g_P(\cdot, \cdot)$ is the function that describes the correlation between an arbitrary entity $h'$ and entity context of the specific entity $h$. In reality, different neighbors may have different power of influence to represent $h$. For example, a target entity is $Terminate2:JudgementDay$ which is a famous in 1991. The director of this entity  or the type of this entity may more important than others. In order to unrelated entities and obtain the correlation, we first obtain $a_i$ which means the represent power between the $ith$ neighbor entity in $C_N(h)$ and an arbitrary triple $<h',r,t>$. Inspired by score function of TransE, we substitute the neighbor entities in $C_N(h)$ for the head $h'$ in triple to compute $a_i$ and then we define $a_i$
+\begin{align} \label{a_i}
 a_i = \|t_{n_i} - r_{n_i} + r - t\|
-$$
-Where $t_{n_i}$ is the $ith$ neighbor entity in $C_N(h)$ and $r_{n_i}$ is the relation between $t_{n_i}$ and $h'$.
-
-Then We use attention model $a(C_N(h))$ to represent how $h'$ selectively focuses on $C_N(h)$.
-$$
-\alpha_i = \frac {\exp(-a_i)} {\sum_{j} \exp(-a_j)}
-$$
-
-Finally, based on the attention results we obtain the correlation between an arbitrary entity $h'$ and neighbor context $C_N(h)$:
-$$
-g_N(h¡¯, C_N(h)) = -\sum_{i} \alpha_{i} \|\mathbf{h'} + \mathbf{r_{n_i}} - \mathbf{t_{n_i}}\|
-$$
-
-The second part $P(r,t|C(h,r,t), h; \Theta)$ in Eq.~\eqref{decomposition} is the conditional probability that $t$ is the tail entity and $r$ is the relation given the head entity $h$, triple context and all the embeddings. In this part we introduce path context that means $t$ could be related to $h$ through a potential relation, which can be considered as the relatedness between $h$ and $t$. We use path context between $h$ and $t$ to measure the relatedness of them and approximate $P(r,t|C(h,r,t),h;\Theta)$ as $P(t|C_P(h,t),h;\Theta)$, where $C_P(h,t)$ is the \emph{path context} between $h$ and $t$. The approximated probability $P(r,t|C_P(h,t),$ $h;\Theta)$ is formalized as follows:
-\begin{align}\label{P_t}
-P(r,t|C_P(h, t), h;\Theta) = \frac {\exp(g_P(r,t, C_P(h, t)))} {\sum_{r' \in \mathcal{R}, t' \in \mathcal{E}} \exp(g_P(r', t', C_P(h, t)))}
 \end{align}
 
-where $g_P(\cdot, \cdot)$ is a function of correlation among an arbitrary entity $t'$ , an arbitrary relation $r$ and path context of the specific entity pair $(h,t)$. Similar to the neighbor context, given a triple $<h,r,t>$ different pathes in a path context $C_P(h, t)$ have different power of influence the triple. In order to obtain $g_P(\cdot, \cdot)$, we firstly calculate the correlation $b_i$ between path $p_i$ in $C_P(h, t)$ and the triple:
+Where $t_{n_i}$ is the $ith$ neighbor entity in $C_N(h)$ and $r_{n_i}$ is the relation between $t_{n_i}$ and $h'$.
+
+Then We use attention model $\alpha_i$ to represent how $h'$ selectively focuses on $C_N(h)$, If the value of $\alpha_i$ is higher, the corresponding neighbor entity in $C_N(h)$ is more important.
+\begin{equation}\label{alpha_i}
+\alpha_i = \frac {\exp(-a_i)} {\sum_{j} \exp(-a_j)}
+\end{equation}
+
+In Eq.~\eqref{g_N}, given a neighbor context $C_N(h)$, the embedding vector of each neighbor has different weights by further considering attention mechanism. Finally, based on the attention results we obtain the correlation between an arbitrary entity $h'$ and neighbor context $C_N(h)$:
+\begin{align} \label{g_N}
+g_N(h¡¯, C_N(h)) = -\sum_{i} \alpha_{i} \|\mathbf{h'} + \mathbf{r_{n_i}} - \mathbf{t_{n_i}}\|
+\end{align}
+
+The second part $P(r,t|C(h,r,t), h; \Theta)$ in Eq.~\eqref{decomposition} is the conditional probability that $t$ is the tail entity and $r$ is the relation given the head entity $h$, triple context and all the embeddings. In this part we introduce path context that means $t$ could be related to $h$ through a potential connective path in a knowledge graph. In the second part two kinds of relatedness should be considered that one is the relatedness between $h$ and $t$ in a a potential connective path $p_i$. And the other is the relatedness between $r$ and $p_i$.  Then We introduce path context among $h$ , $t$ and $r$ to measure the relatedness of them and approximate $P(r,t|C(h,r,t),h;\Theta)$ as $P(t|C_P(h,t),h;\Theta)$, where $C_P(h,t)$ is the \emph{path context} between $h$ and $t$. The approximated probability $P(r,t|C_P(h,t),$ $h;\Theta)$ is formalized as follows:
+
+\begin{small}
+\begin{equation}\label{P_t}
+P(r,t|C_P(h, t), h;\Theta) \!=\! \frac {\exp(g_P(r,t, C_P(h, t)))} {\sum_{r' \in \mathcal{R}, t' \in \mathcal{E}} \exp(g_P(r', t', C_P(h, t)))}
+\end{equation}
+\end{small}
+
+where $g_P(\cdot, \cdot)$ is a function of correlation among an arbitrary entity $t'$  an arbitrary relation $r$ and path context of the specific entity pair $(h,t)$. Similar to the neighbor context, given a triple $<h,r,t>$ different pathes in a path context $C_P(h, t)$ have different power of influence the triple. For example when predicting the entity $Englis$, relations like $locate\_in\_Country$ will have less attentions, and the relation $Speak\_Language$  will have greater attention to represent $Engilsh$. In order to obtain $g_P(\cdot, \cdot)$, we firstly calculate the correlation $b_i$ between path $p_i$ in $C_P(h, t)$ and the triple:
 \begin{equation}\label{f2}
 b_i = \|\mathbf{h} + \mathbf{p_i} - \mathbf{t}\|
 \end{equation}
 
-where $\bm{\mathrm{p_i}}$ composes all relations in $p_i$ into a single vector by summing over all their embeddings. For example, for path $p_i=(r_{m_1}, \cdots, r_{m_i})$, the embedding of it is $\bm{\mathrm{p}}_i = \bm{\mathrm{r}}_{m_1} + \cdots + \bm{\mathrm{r}}_{m_i}$. Eq.~\eqref{f2} has a similar meaning with Eq.~\eqref{f1}.
+Where $\bm{\mathrm{p_i}}$ composes all relations in $p_i$ into a single vector by summing over all their embeddings and this approach is also used in Ptrans\cite{}. For example, for path $p_i=(r_{m_1}, \cdots, r_{m_i})$, the embedding of it is $\bm{\mathrm{p}}_i = \bm{\mathrm{r}}_{m_1} + \cdots + \bm{\mathrm{r}}_{m_i}$. Eq.~\eqref{f2} has a similar meaning with Eq.~\eqref{a_i}.
 
 We then choose important pathes from $C_P(h, t)$ through the attention mechanisms. For each $p_i$, the weight $\beta_{i}$ is then defined as
-$$
+\begin{align}\label{beta_i}
 \beta_{i} = \frac {\exp(-b_i)} {\sum_j \exp(-b_j)}
-$$
+\end{align}
+If $p_i$ is more closer to $h$ and $t$, $\beta_{i}$ will indicate $p_i$ have greater attentions on translating from $h$ to $t$.
 
 Finally given an  arbitrary entity $t'$ and an arbitrary relation $r'$, the correlation $g_P(\cdot, \cdot)$ between $t'$,$r'$ and $C_P(h, t)$ is:
 \begin{equation}\label{gp}
 g_P(r', t', C_P(h,t)) = -\sum_{i} \beta_i  (\|\mathbf{h} + \mathbf{p}_i - \mathbf{t'} \| + \|\mathbf{p}_i - \mathbf{r'}\|)
 \end{equation}
 
-In Eq.~\eqref{gp}, $\|\mathbf{h} + \mathbf{p}_i - \mathbf{t'} \|$ indicates the correlation between $t'$ and $p_i$. Similarly£¬$|\mathbf{p}_i - \mathbf{r'}\|$ is the correlation between $r'$ and $p_i$.
+In Eq.~\eqref{gp}, given a path context $C_P(h,t)$, the embedding vector of each path $p_i$ has different weight $\beta_i$. Eq.~\eqref{gp} has two parts, the first part is  $\|\mathbf{h} + \mathbf{p}_i - \mathbf{t'} \|$ that indicates the correlation between $t'$ and $p_i$. Similarly, the second part is $|\mathbf{p}_i - \mathbf{r'}\|$ is the correlation between $r'$ and $p_i$. If $p_i$ is more related to a triple, the probability of Eq.~\eqref{P_t} will be greater.
 
-Thus, Eq.~\eqref{decomposition} can be approximated as:
+To utilize these two kinds of context, we combine them by jointly maximizing the probability in Eq.~\eqref{decomposition} of a triple which is exist in a knowledge graph. $P(h|C(h,r,t);\Theta)$ and $P(t,r|C(h,r,t),h;\Theta)$ can be approximated as $P(h|C_N(h);\Theta)$ and $P(r,t|C_P(h,t),h;\Theta)$, respectively. Thus Eq.~\eqref{decomposition} Thus, Eq.~\eqref{decomposition} can be approximated as:
 \begin{equation}\label{decomposition_approx}
   f(h,r,t) \approx P(h|C_N(h);\Theta) \cdot P(t,r|C_P(h,t),h;\Theta)
 \end{equation}

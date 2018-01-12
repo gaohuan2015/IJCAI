@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  9 JAN 2018 22:50
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  12 JAN 2018 15:04
 entering extended mode
 **C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
 (C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
@@ -686,11 +686,7 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks39
 )
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux
-
-LaTeX Warning: Label `table_results_by_relation_category' multiply defined.
-
-)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
@@ -706,7 +702,8 @@ LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 79.
 LaTeX Font Info:    ... okay on input line 79.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 79.
- (C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
+
+(C:\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (C:\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
@@ -814,22 +811,15 @@ Underfull \hbox (badness 1478) in paragraph at lines 79--80
  []
 
 
-LaTeX Warning: Reference `P_r' on page 3 undefined on input line 87.
-
-
 Package natbib Warning: Citation `DBLP:conf/nips/MikolovSCCD13' on page 3 undef
 ined on input line 87.
 
-[3]
 
-LaTeX Warning: Reference `P_r' on page 4 undefined on input line 97.
-
-
-Overfull \hbox (19.75471pt too wide) in paragraph at lines 108--108
+Overfull \hbox (19.75471pt too wide) in paragraph at lines 97--97
 [] 
  []
 
-) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\exp.tex
+[3]) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\exp.tex
 
 Package natbib Warning: Citation `BordesUGWY13' on page 4 undefined on input li
 ne 57.
@@ -880,30 +870,39 @@ Package natbib Warning: Citation `NickelRP16' on page 5 undefined on input line
 
 
 Package natbib Warning: Citation `socher2013' on page 5 undefined on input line
- 111.
-
-[5]
-
-LaTeX Warning: Reference `attention results in path context' on page 6 undefine
-d on input line 134.
+ 110.
 
 
-Overfull \hbox (15.62987pt too wide) in paragraph at lines 140--152
- [][] 
+Underfull \hbox (badness 1052) in paragraph at lines 110--111
+\OT1/ptm/m/n/10 task, we choose TransE,TransH,TransR,TransD,NTN and
  []
 
-<pic2.png, id=148, 645.41125pt x 457.71pt>
+[5]
+Underfull \hbox (badness 1430) in paragraph at lines 131--132
+\OT1/ptm/m/n/10 bed-dings in gen-er-al out-per-for-m their base mod-el. As
+ []
+
+<pic2.png, id=152, 645.41125pt x 457.71pt>
 File: pic2.png Graphic file (type png)
  <use pic2.png>
-Package pdftex.def Info: pic2.png used on input line 156.
+Package pdftex.def Info: pic2.png used on input line 157.
 (pdftex.def)             Requested size: 227.64894pt x 161.43709pt.
 
-Underfull \hbox (badness 1622) in paragraph at lines 154--160
+Underfull \hbox (badness 3460) in paragraph at lines 158--158
+[]\OT1/ptm/m/n/10 Figure 2: []Attentions for neigh-bor con-tex-t of \OT1/ptm/m/
+it/10 Ter-mi-
+ []
+
+
+Underfull \hbox (badness 1622) in paragraph at lines 155--161
 \OT1/ptm/m/n/10 they are re-gard-s as the neigh-bor con-tex-t of the en-ti-ty
  []
 
 ) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\rel.tex)
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\conc.tex)
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\conc.tex
+Underfull \vbox (badness 6876) has occurred while \output is active []
+
+)
 (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 3.
@@ -921,22 +920,15 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 Package rerunfilecheck Info: File `ijcai17.out' has not changed.
 (rerunfilecheck)             Checksum: 85CD4702E394589FA56C082196DD7E05;731.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 16807 strings out of 495354
- 277931 string characters out of 3183859
- 423612 words of memory out of 3000000
+ 16808 strings out of 495354
+ 277951 string characters out of 3183859
+ 424658 words of memory out of 3000000
  19525 multiletter control sequences out of 15000+200000
  38697 words of font info for 102 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,1411b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,1411b,345s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmbx10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
 x5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/CTEX/MiKTeX
@@ -957,9 +949,9 @@ TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/
 urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTE
 X/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ijcai17.pdf (6 pages, 334505 bytes).
+Output written on ijcai17.pdf (6 pages, 341269 bytes).
 PDF statistics:
- 251 PDF objects out of 1000 (max. 8388607)
- 43 named destinations out of 1000 (max. 500000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
