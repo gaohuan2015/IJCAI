@@ -85,7 +85,7 @@ We use a few outstanding models in recent years as baselines and compare our mod
     PTransE                  & 207          & 58              & 51.4          & \textbf{84.6}   \\
     GAKE                     & 228          & 119             & 44.5          & 64.8            \\
     \hline
-    TCE                      & \textbf{110} & \textbf{25}     & \textbf{55.3} & 83.1            \\
+    ATCE                      & \textbf{110} & \textbf{25}     & \textbf{55.3} & 83.1            \\
     \hline
   \end{tabular}
 \end{table}
@@ -95,14 +95,13 @@ We construct the knowledge graph using Apache TinkerPop\footnote{\url{http://tin
 
 For neighbor context generation, it's expensive to consider all the neighbors of each entity in the graph for the reason that there are some entities connecting with a large amount of other entities, which would lead to a huge size of neighbor context. We use sampling to reduce the size of neighbor context. For those entity whose neighbor context size is larger than a fixed size $n$, we sample $n$ neighbors randomly from it's neighbor context. Similarly, a large number of paths between a pair of entities would result in high computational complexity. To solve the problem, firstly, we limit the length of paths by 2-step and 3-step, then, we use random walk to sample $m$ paths between a pair of entities. In our experiment, $n$ and $m$ are all set as 10. Note that for some pairs of entities, there may be no 2 or 3 step relation paths. In such case, we suppose that the relatedness between those pairs of entities are relatively low and the values of $g_P(\cdot, \cdot)$ in Eq.~\eqref{gp} are set as -100. We store all triple contexts in Mongodb\footnote{\url{www.mongodb.org/}},a NoSQL database, that can help us for rapid seeking the context of a specified entity.
 
-
 We use mini-batch SGD to train our model. We choose the learning rate $\alpha$ of SGD among $\{0.1, 0.01, 0.001\}$, the dimension of embeddings $k$ among $\{50, 75, 100\}$, the batch size $B$ among $\{120, 480,$ $ 960, 1920, 4800\}$. The best parameters are determined by the performance on valid set. The optimal parameters are $\alpha=0.001$, $k=50$ and $B=4800$.
 
 \subsection{Link Prediction}
 Link prediction~\cite{BordesUGWY13} is a task to predict the missing head or tail entity in a given triple based on training triples. Metrics \textit{Mean Rank} and \textit{Hits@10} are used to measure the performance of our model.
 
 
-We collected the result of link prediction in Table~\ref{Link prediction results}. From the results we can see that, our model outperforms other baselines on most of the metrics significantly and consistently, while slightly worse than PTransE on \textsc{Hits}@10. The result implies that triple contexts do improve the performance on link prediction. Although using similar types of contexts in the graph, GAKE's performance is inferior to our model, which shows the superiority of our framework. Note that the experimental results of \textsc{HolE} are absent here, for it uses a different metric, MRR (Mean Reciprocal rank), instead of \textit{Mean rank} for evaluation. But according to \textit{Hits@10} reported in~\cite{NickelRP16}, the results of our model are better than \textsc{HolE}.
+We collected the result of link prediction in Table~\ref{table_link_prediction_results}. From the results we can see that, our model outperforms other baselines on most of the metrics significantly and consistently, while slightly worse than PTransE on \textsc{Hits}@10. The result implies that triple contexts do improve the performance on link prediction. Although using similar types of contexts in the graph, GAKE's performance is inferior to our model, which shows the superiority of our framework. Note that the experimental results of \textsc{HolE} are absent here, for it uses a different metric, MRR (Mean Reciprocal rank), instead of \textit{Mean rank} for evaluation. But according to \textit{Hits@10} reported in~\cite{NickelRP16}, the results of our model are better than \textsc{HolE}.
 
 
 In Table~\ref{FB15k_results_by_relation_category} and Table~\ref{FB15k-237_results_by_relation_category}, we show separate evaluation results by category of relationships on FB15k. We can see that ATCE brings promising improvements on modeling complex relations, such as predicting tail of 1-To-N relations, predicting head of N-To-1 relations and N-To-N relations. Specifically, ATCE behaves well when predicting the "N" side of 1-To-N and N-To-1 relations, indicating that valid triples have higher scores than invalid triples in general. In some other simpler scenarios, such as 1-To-1 relations and predicting the "1" side of 1-To-N and N-To-1 relations, the performance of ATCE is still acceptable although not so good as some other baselines, such as TransH and TransR. The results suggest that the incorporation of triple context is helpful when handling complex relations, at the cost of precision in modeling simple relations, which seems complementary to some other baselines.
@@ -134,20 +133,22 @@ Furthermore, to better understand the attention mechanism in our approach, The e
 
 \begin{table}
  \centering
- \caption{attention results in path context}
+ \caption{Attention Results in Path Context}
   \label{Attention Results in Path Context}
-\begin{tabular}{c|c|c}
+  \small
+  \setlength{\tabcolsep}{1mm}{
+\begin{tabular}{c|l|l}
   \hline
   Weight & Path  & Relation \\
   \hline
-  0.45 &  $contains \xrightarrow{contains}$ & $partially\_contains$ \\
-  0.35 & $contains \xrightarrow{nationality}$ & $marriage\_location$ \\
+  0.45 &  $contains \xrightarrow{} contains $ & $partially\_contains$ \\
+  0.35 & $contains \xrightarrow{} nationality$ & $marriage\_location$ \\
   0.24 & $nationality$ & $marriage\_location$ \\
-  0.35 & $contains \xrightarrow{place\_lived}$ & $marriage\_location$ \\
+  0.35 & $contains \xrightarrow{} place\_lived$ & $marriage\_location$ \\
   0.2 & $nominated\_for$ & $film\_edited\_by$\\
-  0.3 & $nominated \xrightarrow{award\_nominee}$ & $film\_edited\_by$\\
+  0.3 & $nominated \xrightarrow{} award\_nominee$ & $film\_edited\_by$\\
   \hline
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 For neighbor context, we also use attention mechanism to choose which neighbor is more related for the head. we demonstrate attentions of the 6 different neighbors when they are regards as the neighbor context of the entity $Terminate2:JudgementDay$, which indicates a movie in 1991. Figure ~\ref{pic2}  shows the results, from the results we see two entities, $Action$ and $Sequel$ ,have largest attention to represent the target entity $Terminate2:JudgementDay$, as $Action$  reflects the type of movie while only some of movies have sequels.
