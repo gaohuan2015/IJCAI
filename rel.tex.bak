@@ -1,19 +1,3 @@
 \section{Related Work}\label{sec:rel}
-
-The most relevant work to ours is the approach given in \cite{statisticschema} which uses association rule mining to mine schema information. Their algorithms have been implemented in GoldMiner. This approach is extended in \cite{Inductivedisjoint} by considering na\"{i}ve negative association rule mining to learn disjointness axioms. Our systems can be seen as an extension of GoldMiner by considering type inference and proportional support. However, as our experiments have shown, GoldMiner has difficulties to deal with the incompleteness problem.
-
-Another relevant work is given in \cite{BelNet+} which integrates probabilistic inference capability of Bayesian Networks with logical formalism of Description Logics. It considers schema learning as instance classification. To be consistent with OWA, the traditional confusion matrix is extended for considering unknown results. The corresponding algorithms have been implemented in   BelNet\textsuperscript{+}. According to our comparison, BelNet\textsuperscript{+} fails to deal with those cases that the number of instances belonging to the pair of concepts is not large enough.
-
-Our approach is inspired by the rule mining model given in \cite{AMIE}, which conforms to the OWA. This work introduces novel definitions of support and confidence. In order to acquire the unknown facts, the notion of functionality is applied to acquire negative examples of a binary relation. Since the goal of this approach is to mine horn logical rules and a type assertion is not functional, it is not suitable to generate axioms from an incomplete KB.
-
-Inductive logic programming (ILP), which marries machine learning and data mining, is often used to learn schema information.
-%
-In order to induce concept definition axioms from existing instances, Lehmann and
-his colleagues propose an approach in \cite{conceptlearn} to generate candidate concept descriptions by a downward refinement operator. Later on, this approach is extended to deal with very large dataset in \cite{learnowl}. All the relevant algorithms have been implemented in the tool DL-Learner \cite{BuhmannLW16}. However, noisy negative examples will influence the performance of such approaches.
-
-There are also other works to generate schema information.
-%
-In \cite{topper2012dbpedia}, all concepts are mapped to vectors with the same dimension. If the similarity of two concepts is lower than a threshold, they are regarded as disjoint.  The authors of \cite{Debugging} proposes an appropriate heuristic rule for learning disjointness axioms. This heuristic rule assumes that all sibling concepts are disjoint. A light-weight approach to enrich knowledge is presented in \cite{universal}, which uses SPARQL queries to learn axioms. 
-%
-The approach given in \cite{volker2007learning} is a supervised learning approach, whose training set needs to be constructed manually. 
+In recent year, a variety of knowledge graph embedding approaches are proposed, 
 

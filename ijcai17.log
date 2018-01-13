@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  12 JAN 2018 15:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  13 JAN 2018 13:20
 entering extended mode
 **C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
 (C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
@@ -898,12 +898,81 @@ Underfull \hbox (badness 1622) in paragraph at lines 155--161
 \OT1/ptm/m/n/10 they are re-gard-s as the neigh-bor con-tex-t of the en-ti-ty
  []
 
-) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\rel.tex)
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\conc.tex
+) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\rel.tex
+
+Package natbib Warning: Citation `NickelTK11' on page 6 undefined on input line
+ 2.
+
+
+Package natbib Warning: Citation `SocherCMN13' on page 6 undefined on input lin
+e 2.
+
+
+Package natbib Warning: Citation `BordesUGWY13' on page 6 undefined on input li
+ne 2.
+
+
+Package natbib Warning: Citation `WangZFC14' on page 6 undefined on input line 
+2.
+
+
+Package natbib Warning: Citation `LinLSLZ15' on page 6 undefined on input line 
+2.
+
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 2.
+
+
+Package natbib Warning: Citation `SocherCMN13' on page 6 undefined on input lin
+e 2.
+
+Missing character: There is no £ in font ptmr7t!
+Missing character: There is no º in font ptmr7t!
+Missing character: There is no £ in font ptmr7t!
+Missing character: There is no ¬ in font ptmr7t!
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 2.
+
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 2.
+
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 2.
+
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 2.
+
+
 Underfull \vbox (badness 6876) has occurred while \output is active []
 
-)
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.bbl
+
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 4.
+
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 4.
+
+
+Package natbib Warning: Citation `BordesWCB11' on page 6 undefined on input lin
+e 4.
+
+
+Package natbib Warning: Citation `LinLLSRL15' on page 6 undefined on input line
+ 6.
+
+
+Package natbib Warning: Citation `FengHYZ16' on page 6 undefined on input line 
+6.
+
+) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\conc.tex [6 <C:/Users/gaohu/Desktop/IJ
+CAI-18/IJCAI/pic2.png>]) (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
@@ -912,23 +981,24 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 102.
-[6 <C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/pic2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
+[7
 
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux)
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 102.
+ (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\ijcai17.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 102.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 102.
 Package rerunfilecheck Info: File `ijcai17.out' has not changed.
 (rerunfilecheck)             Checksum: 85CD4702E394589FA56C082196DD7E05;731.
  ) 
 Here is how much of TeX's memory you used:
- 16808 strings out of 495354
- 277951 string characters out of 3183859
+ 16812 strings out of 495354
+ 277995 string characters out of 3183859
  424658 words of memory out of 3000000
- 19525 multiletter control sequences out of 15000+200000
+ 19528 multiletter control sequences out of 15000+200000
  38697 words of font info for 102 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,1411b,345s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,1928b,345s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmbx10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
 x5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/CTEX/MiKTeX
@@ -949,9 +1019,9 @@ TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/
 urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTE
 X/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ijcai17.pdf (6 pages, 341273 bytes).
+Output written on ijcai17.pdf (7 pages, 345109 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
+ 262 PDF objects out of 1000 (max. 8388607)
+ 45 named destinations out of 1000 (max. 500000)
  119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
