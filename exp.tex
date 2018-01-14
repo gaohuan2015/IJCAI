@@ -63,6 +63,7 @@ Following the same protocol used in \cite{BordesUGWY13}, we use \textit{Mean Ran
 We use a few outstanding models in recent years as baselines and compare our model with them, including TransE~\cite{BordesUGWY13}, TransH~\cite{WangZFC14}, TransR~\cite{LinLSLZ15} , CTransR~\cite{LinLSLZ15}, PTransE~\cite{LinLLSRL15} and GAKE~\cite{FengHYZ16}. For each baseline model, we first learn representations of all entities and relations. After that the conditional probability of a triple is calculated by the score function, While in ATCE, we construct the triple context with each triple. At last, if the conditional probability of $<h,r,t>$ is larger than $p_r$,  $<h,r,t>$ is regard as a correct triple.
 
 \begin{table} %\small
+ \centering
   \caption{Link prediction results}
   \label{table_link_prediction_results}
   \begin{tabular}{c|cc|cc}
@@ -104,7 +105,7 @@ Link prediction~\cite{BordesUGWY13} is a task to predict the missing head or tai
 We collected the result of link prediction in Table~\ref{table_link_prediction_results}. From the results we can see that, our model outperforms other baselines on most of the metrics significantly and consistently, while slightly worse than PTransE on \textsc{Hits}@10. The result implies that triple contexts do improve the performance on link prediction. Although using similar types of contexts in the graph, GAKE's performance is inferior to our model, which shows the superiority of our framework. Note that the experimental results of \textsc{HolE} are absent here, for it uses a different metric, MRR (Mean Reciprocal rank), instead of \textit{Mean rank} for evaluation. But according to \textit{Hits@10} reported in~\cite{NickelRP16}, the results of our model are better than \textsc{HolE}.
 
 
-In Table~\ref{FB15k_results_by_relation_category} and Table~\ref{FB15k-237_results_by_relation_category}, we show separate evaluation results by category of relationships on FB15k. We can see that ATCE brings promising improvements on modeling complex relations, such as predicting tail of 1-To-N relations, predicting head of N-To-1 relations and N-To-N relations. Specifically, ATCE behaves well when predicting the "N" side of 1-To-N and N-To-1 relations, indicating that valid triples have higher scores than invalid triples in general. In some other simpler scenarios, such as 1-To-1 relations and predicting the "1" side of 1-To-N and N-To-1 relations, the performance of ATCE is still acceptable although not so good as some other baselines, such as TransH and TransR. The results suggest that the incorporation of triple context is helpful when handling complex relations, at the cost of precision in modeling simple relations, which seems complementary to some other baselines.
+In Table~\ref{FB15k_results_by_relation_category} and Table~\ref{FB15k-237_results_by_relation_category}, we show separate evaluation results by category of relationships on the two benchmark datasets. We can see that ATCE brings promising improvements on modeling complex relations, such as predicting tail of 1-To-N relations, predicting head of N-To-1 relations and N-To-N relations. Specifically, ATCE behaves well when predicting the "N" side of 1-To-N and N-To-1 relations, indicating that valid triples have higher scores than invalid triples in general. In some other simpler scenarios, such as 1-To-1 relations and predicting the "1" side of 1-To-N and N-To-1 relations, the performance of ATCE is still acceptable although not so good as some other baselines, such as TransH and TransR. The results suggest that the incorporation of triple context is helpful when handling complex relations, at the cost of precision in modeling simple relations, which seems complementary to some other baselines.
 \subsection{Triple Classification}
 We also test our model on triple classification. In this task,given a knowledge base and a triple $<h,r,t>$ we aim to determine whether it is correct or not. FB15K has only positive examples, thus we generated negative triples for FB15K by following strategy of ~\cite{socher2013}. As the result, the classification accuracies on FB15K and FB15k-237 can be compare directly with previous studies. In this task, we choose TransE,TransH,TransR,TransD,NTN and GAKE as baseline models. The parameter values for training TransE,TransH,TransR,TransD,NTN and GAKE are borrowed from their reports.
 
@@ -123,7 +124,7 @@ We also test our model on triple classification. In this task,given a knowledge 
   GAKE & 0.89 & 0.88 \\
   NTN & 0.41 & 0.42 \\
   \hline
-  ATCR & \textbf{0.91} & \textbf{0.92} \\
+  ATCE & \textbf{0.91} & \textbf{0.92} \\
   \hline
 \end{tabular}
 \end{table}

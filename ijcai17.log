@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  13 JAN 2018 13:32
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  14 JAN 2018 11:17
 entering extended mode
 **C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
 (C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
@@ -758,6 +758,10 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
 
+Underfull \hbox (badness 3281) in paragraph at lines 84--85
+[]\OT1/ptm/m/n/10 Because rep-re-sen-ta-tion learn-ing of knowl-edge
+ []
+
 (C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\intro.tex [1{C:/CTEX/UserData/pdftex/con
 fig/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
@@ -856,45 +860,45 @@ Package natbib Warning: Citation `LinLLSRL15' on page 4 undefined on input line
 Package natbib Warning: Citation `FengHYZ16' on page 4 undefined on input line 
 63.
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 94.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 95.
 (C:\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [4]
 
 Package natbib Warning: Citation `BordesUGWY13' on page 5 undefined on input li
-ne 101.
+ne 102.
 
 
 Package natbib Warning: Citation `NickelRP16' on page 5 undefined on input line
- 104.
+ 105.
 
 
 Package natbib Warning: Citation `socher2013' on page 5 undefined on input line
- 109.
+ 110.
 
 
-Underfull \hbox (badness 1052) in paragraph at lines 109--110
+Underfull \hbox (badness 1052) in paragraph at lines 110--111
 \OT1/ptm/m/n/10 task, we choose TransE,TransH,TransR,TransD,NTN and
  []
 
 [5]
-Underfull \hbox (badness 1430) in paragraph at lines 130--131
+Underfull \hbox (badness 1430) in paragraph at lines 131--132
 \OT1/ptm/m/n/10 bed-dings in gen-er-al out-per-for-m their base mod-el. As
  []
 
 <pic2.png, id=154, 645.41125pt x 457.71pt>
 File: pic2.png Graphic file (type png)
  <use pic2.png>
-Package pdftex.def Info: pic2.png used on input line 156.
+Package pdftex.def Info: pic2.png used on input line 157.
 (pdftex.def)             Requested size: 227.64894pt x 161.43709pt.
 
-Underfull \hbox (badness 3460) in paragraph at lines 157--157
+Underfull \hbox (badness 3460) in paragraph at lines 158--158
 []\OT1/ptm/m/n/10 Figure 2: []Attentions for neigh-bor con-tex-t of \OT1/ptm/m/
 it/10 Ter-mi-
  []
 
 
-Underfull \hbox (badness 1622) in paragraph at lines 154--160
+Underfull \hbox (badness 1622) in paragraph at lines 155--161
 \OT1/ptm/m/n/10 they are re-gard-s as the neigh-bor con-tex-t of the en-ti-ty
  []
 
@@ -995,7 +999,7 @@ Here is how much of TeX's memory you used:
  19529 multiletter control sequences out of 15000+200000
  39212 words of font info for 104 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,20n,55p,1928b,332s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,20n,55p,1928b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<C:/CTEX/MiKTeX/fonts/type1/p
 ublic/amsfonts/cm/cmbx10.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmb
 x5.pfb><C:/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/CTEX/MiKTeX
@@ -1016,7 +1020,7 @@ TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/
 urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTE
 X/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ijcai17.pdf (7 pages, 348729 bytes).
+Output written on ijcai17.pdf (7 pages, 348730 bytes).
 PDF statistics:
  264 PDF objects out of 1000 (max. 8388607)
  45 named destinations out of 1000 (max. 500000)
