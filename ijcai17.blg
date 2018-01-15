@@ -1,18 +1,23 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: ijcai17.aux
 The style file: named.bst
-Database file #1: bibOfTex.bib
-Warning--I didn't find a database entry for "DBLP:conf/emnlp/WangZFC14"
-Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "DBLP:conf/nips/MikolovSCCD13"
-Warning--I didn't find a database entry for "BordesUGWY13"
+Database file #1: ijcai18.bib
 Warning--I didn't find a database entry for "Toutanova15"
-Warning--I didn't find a database entry for "WangZFC14"
-Warning--I didn't find a database entry for "LinLSLZ15"
-Warning--I didn't find a database entry for "LinLLSRL15"
-Warning--I didn't find a database entry for "FengHYZ16"
-Warning--I didn't find a database entry for "NickelRP16"
-Warning--I didn't find a database entry for "socher2013"
-Warning--I didn't find a database entry for "NickelTK11"
-Warning--I didn't find a database entry for "SocherCMN13"
-Warning--I didn't find a database entry for "BordesWCB11"
-(There were 14 warnings)
+Too many commas in name 1 of "Toutanova K, Lin V, Yih W, et al." for entry Toutanova16
+while executing---line 1211 of file named.bst
+Too many commas in name 1 of "Toutanova K, Lin V, Yih W, et al." for entry Toutanova16
+while executing---line 1211 of file named.bst
+Name 1 in "Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, and Jun Zhao" has a comma at the end for entry TransD
+while executing---line 1211 of file named.bst
+Too many commas in name 1 of "Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, and Jun Zhao" for entry TransD
+while executing---line 1211 of file named.bst
+Name 1 in "Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, and Jun Zhao" has a comma at the end for entry TransD
+while executing---line 1211 of file named.bst
+Too many commas in name 1 of "Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, and Jun Zhao" for entry TransD
+while executing---line 1211 of file named.bst
+Name 1 in "Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, and Jun Zhao" has a comma at the end for entry TransD
+while executing---line 1280 of file named.bst
+Too many commas in name 1 of "Guoliang Ji, Shizhu He, Liheng Xu, Kang Liu, and Jun Zhao" for entry TransD
+while executing---line 1280 of file named.bst
+Too many commas in name 1 of "Toutanova K, Lin V, Yih W, et al." for entry Toutanova16
+while executing---line 1280 of file named.bst
+(There were 9 error messages)

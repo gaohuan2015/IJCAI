@@ -31,24 +31,24 @@ The first part $P(h|C(h,r,t);\Theta)$ in Eq.~\eqref{decomposition} represents th
 \begin{align} \label{P_h}
   P(h|C_N(h);\Theta) = \frac {\exp(g_N(h, C_N(h)))} {\sum_{h' \in \mathcal{E}} \exp(g_N(h', C_N(h)))}
 \end{align}
-where $g_P(\cdot, \cdot)$ is the function that describes the correlation between an arbitrary entity $h'$ and entity context of the specific entity $h$. In reality, different neighbors may have different power of influence to represent $h$. For example, a target entity is $Terminate2:JudgementDay$ which is a famous in 1991. The director of this entity  or the type of this entity may more important than others. In order to unrelated entities and obtain the correlation, we first obtain $a_i$ which means the represent power between the $ith$ neighbor entity in $C_N(h)$ and an arbitrary triple $<h',r,t>$. Inspired by score function of TransE, we substitute the neighbor entities in $C_N(h)$ for the head $h'$ in triple to compute $a_i$ and then we define $a_i$
+where $g_P(\cdot, \cdot)$ is the function that describes the correlation between an arbitrary entity $h'$ and a neighbor context of the specific entity $h$. In reality, different neighbors may have different power of influence to represent $h$. For example, a target entity is $Terminate2:JudgementDay$ which is a famous movie in 1991. The director of this movie or the type of this movie may more important than others. In order to filter unrelated entities and obtain $g_P(\cdot, \cdot)$, we first obtain $a_i$ which means the represent power between the $ith$ neighbor entity in $C_N(h)$ and an arbitrary triple $<h',r,t>$. Inspired by score function of TransE, we substitute the neighbor entities in $C_N(h)$ for the head $h'$ in triple to compute $a_i$ and then we define $a_i$
 \begin{align} \label{a_i}
 a_i = \|t_{n_i} - r_{n_i} + r - t\|
 \end{align}
 
 Where $t_{n_i}$ is the $ith$ neighbor entity in $C_N(h)$ and $r_{n_i}$ is the relation between $t_{n_i}$ and $h'$.
 
-Then We use attention model $\alpha_i$ to represent how $h'$ selectively focuses on $C_N(h)$, If the value of $\alpha_i$ is higher, the corresponding neighbor entity in $C_N(h)$ is more important.
+Then we use attention model $\alpha_i$ to represent how $h'$ selectively focuses on $C_N(h)$, If the value of $\alpha_i$ is higher, the corresponding neighbor entity in $C_N(h)$ is more important for $h'$.
 \begin{equation}\label{alpha_i}
 \alpha_i = \frac {\exp(-a_i)} {\sum_{j} \exp(-a_j)}
 \end{equation}
 
-In Eq.~\eqref{g_N}, given a neighbor context $C_N(h)$, the embedding vector of each neighbor has different weights by further considering attention mechanism. Finally, based on the attention results we obtain the correlation between an arbitrary entity $h'$ and neighbor context $C_N(h)$:
+In Eq.~\eqref{g_N}, given a neighbor context $C_N(h)$, the embedding vector of each neighbor has different weights by the attention mechanism in Eq.~\eqref{alpha_i}. Finally, based on the attention results we obtain the correlation between an arbitrary entity $h'$ and neighbor context $C_N(h)$:
 \begin{align} \label{g_N}
 g_N(h¡¯, C_N(h)) = -\sum_{i} \alpha_{i} \|\mathbf{h'} + \mathbf{r_{n_i}} - \mathbf{t_{n_i}}\|
 \end{align}
 
-The second part $P(r,t|C(h,r,t), h; \Theta)$ in Eq.~\eqref{decomposition} is the conditional probability that $t$ is the tail entity and $r$ is the relation given the head entity $h$, triple context and all the embeddings. In this part we introduce path context that means $t$ could be related to $h$ through a potential connective path in a knowledge graph. In the second part two kinds of relatedness should be considered that one is the relatedness between $h$ and $t$ in a a potential connective path $p_i$. And the other is the relatedness between $r$ and $p_i$.  Then We introduce path context among $h$ , $t$ and $r$ to measure the relatedness of them and approximate $P(r,t|C(h,r,t),h;\Theta)$ as $P(t|C_P(h,t),h;\Theta)$, where $C_P(h,t)$ is the \emph{path context} between $h$ and $t$. The approximated probability $P(r,t|C_P(h,t),$ $h;\Theta)$ is formalized as follows:
+The second part $P(r,t|C(h,r,t), h; \Theta)$ in Eq.~\eqref{decomposition} is the conditional probability that $t$ is the tail entity and $r$ is the relation given the head entity $h$, triple context and all the embeddings. In this part we introduce path context that means $t$ could be related to $h$ through a potential connective path in a knowledge graph. In the second part two kinds of relatedness should be considered that one is the relatedness between $h$ and $t$ in a a potential connective path $p_i$. And the other is the relatedness between $r$ and $p_i$.  Then We introduce path context among $h$ , $t$ and $r$ to measure the relatedness of them and approximate $P(r,t|C(h,r,t),h;\Theta)$ as $P(r,t|C_P(h,t),h;\Theta)$, where $C_P(h,t)$ is the \emph{path context} between $h$ and $t$. The approximated probability $P(r,t|C_P(h,t),$ $h;\Theta)$ is formalized as follows:
 
 \begin{small}
 \begin{equation}\label{P_t}
@@ -56,12 +56,12 @@ P(r,t|C_P(h, t), h;\Theta) \!=\! \frac {\exp(g_P(r,t, C_P(h, t)))} {\sum_{r' \in
 \end{equation}
 \end{small}
 
-where $g_P(\cdot, \cdot)$ is a function of correlation among an arbitrary entity $t'$  an arbitrary relation $r$ and path context of the specific entity pair $(h,t)$. Similar to the neighbor context, given a triple $<h,r,t>$ different pathes in a path context $C_P(h, t)$ have different power of influence the triple. For example when predicting the entity $Englis$, relations like $locate\_in\_Country$ will have less attentions, and the relation $Speak\_Language$  will have greater attention to represent $Engilsh$. In order to obtain $g_P(\cdot, \cdot)$, we firstly calculate the correlation $b_i$ between path $p_i$ in $C_P(h, t)$ and the triple:
+where $g_P(\cdot, \cdot)$ is a function of correlation among an arbitrary entity $t'$,an arbitrary relation $r'$ and path context of the specific entity pair $(h,t)$. Similar to the neighbor context, given a triple $<h,r,t>$ different pathes in a path context $C_P(h, t)$ have different power of influence the triple. For example when predicting the entity $Englis$, relations like $locate\_in\_Country$ will have less attentions, and the relation $Speak\_Language$  will have greater attention to represent $Engilsh$. In order to obtain $g_P(\cdot, \cdot)$, we firstly calculate the correlation $b_i$ between path $p_i$ in $C_P(h, t)$ and a tail entity:
 \begin{equation}\label{f2}
 b_i = \|\mathbf{h} + \mathbf{p_i} - \mathbf{t}\|
 \end{equation}
 
-Where $\bm{\mathrm{p_i}}$ composes all relations in $p_i$ into a single vector by summing over all their embeddings and this approach is also used in Ptrans\cite{}. For example, for path $p_i=(r_{m_1}, \cdots, r_{m_i})$, the embedding of it is $\bm{\mathrm{p}}_i = \bm{\mathrm{r}}_{m_1} + \cdots + \bm{\mathrm{r}}_{m_i}$. Eq.~\eqref{f2} has a similar meaning with Eq.~\eqref{a_i}.
+Where $\bm{\mathrm{p_i}}$ composes all relations in $p_i$ into a single vector by summing over all their embeddings and this approach is also used in PTransE ~\cite{LinLLSRL15}. For example, for path $p_i=(r_{m_1}, \cdots, r_{m_i})$, the embedding of it is $\bm{\mathrm{p}}_i = \bm{\mathrm{r}}_{m_1} + \cdots + \bm{\mathrm{r}}_{m_i}$. Eq.~\eqref{f2} has a similar meaning with Eq.~\eqref{a_i}.
 
 We then choose important pathes from $C_P(h, t)$ through the attention mechanisms. For each $p_i$, the weight $\beta_{i}$ is then defined as
 \begin{align}\label{beta_i}
@@ -74,15 +74,13 @@ Finally given an  arbitrary entity $t'$ and an arbitrary relation $r'$, the corr
 g_P(r', t', C_P(h,t)) = -\sum_{i} \beta_i  (\|\mathbf{h} + \mathbf{p}_i - \mathbf{t'} \| + \|\mathbf{p}_i - \mathbf{r'}\|)
 \end{equation}
 
-In Eq.~\eqref{gp}, given a path context $C_P(h,t)$, the embedding vector of each path $p_i$ has different weight $\beta_i$. Eq.~\eqref{gp} has two parts, the first part is  $\|\mathbf{h} + \mathbf{p}_i - \mathbf{t'} \|$ that indicates the correlation between $t'$ and $p_i$. Similarly, the second part is $|\mathbf{p}_i - \mathbf{r'}\|$ is the correlation between $r'$ and $p_i$. If $p_i$ is more related to a triple, the probability of Eq.~\eqref{P_t} will be greater.
+In Eq.~\eqref{gp}, given a path context $C_P(h,t)$, the embedding vector of each path $p_i$ has different weight $\beta_i$. Eq.~\eqref{gp} has two parts, the first part is  $\|\mathbf{h} + \mathbf{p}_i - \mathbf{t'} \|$ that indicates the correlation between $t'$ and $p_i$. Similarly, the second part is $\|\mathbf{p}_i - \mathbf{r'}\|$ is the correlation between $r'$ and $p_i$. If $p_i$ is more related to $r'$ and $t'$, the probability of Eq.~\eqref{P_t} will be greater.
 
 To utilize these two kinds of context, we combine them by jointly maximizing the probability in Eq.~\eqref{decomposition} of a triple which is exist in a knowledge graph. $P(h|C(h,r,t);\Theta)$ and $P(t,r|C(h,r,t),h;\Theta)$ can be approximated as $P(h|C_N(h);\Theta)$ and $P(r,t|C_P(h,t),h;\Theta)$, respectively. Thus Eq.~\eqref{decomposition} Thus, Eq.~\eqref{decomposition} can be approximated as:
 \begin{equation}\label{decomposition_approx}
-  f(h,r,t) \approx P(h|C_N(h);\Theta) \cdot P(t,r|C_P(h,t),h;\Theta)
+  f(h,r,t) \approx P(h|C_N(h);\Theta) \cdot P(r,t|C_P(h,t),h;\Theta)
 \end{equation}
 in which way the neighbor context and the path context of a triple are incorporated.
-
-
 \subsection{Model Learning}
 By feasible approximation, the score function is transformed to Eq.~\eqref{decomposition_approx}, each part is represented in softmax form as Eq.~\eqref{P_h} and Eq.~\eqref{P_t}. However, it is impractical to compute these softmax functions directly because of high computational overhead. Hence, we adopt negative sampling, which is proposed in \cite{DBLP:conf/nips/MikolovSCCD13} to approximate full softmax function efficiently, to approximate softmax functions in our model. For the whole knowledge graph $\mathcal{K}$, it is approximated via negative sampling as follows:
 
@@ -96,7 +94,7 @@ P(\mathcal{K}|\Theta) &= \prod_{(h,r,t) \in \mathcal{K}} f(h,r,t) \\
 \end{split}
 \end{equation}
 
-where $\{h', r, t\}$ is the corrupted triples by replacing the head entity with an arbitrary entity. $\{h, r', t'\}$  also is the corrupted triples by replacing the tail entity with an arbitrary entity and a relation $r$ with an arbitrary relation.  $\sigma(\cdot)$ is the logistic function. Simultaneity, for convenient application, we convert Eq.~\eqref{t_score} to the negative logarithm form as follows:
+where $\{h', r, t\}$ is the corrupted triples by replacing the head entity with an arbitrary entity. $\{h, r', t'\}$  also is the corrupted triples by replacing the tail entity with an arbitrary entity and a relation $r$ with an arbitrary relation.  $\sigma(\cdot)$ is the logistic function. Simultaneity, for convenient application, we convert Eq.~\eqref{t_score} to the negative logarithm form which can be optimized by stochastic gradient descent (SGD). The objective function of a knowledge graph is formulated as:
 \begin{equation}\label{approximation}
 \begin{split}
 -\log P(\mathcal{K} | \Theta)

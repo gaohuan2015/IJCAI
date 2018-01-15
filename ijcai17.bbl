@@ -1,3 +1,118 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\citeauthoryear{Auer \bgroup \em et al.\egroup
+  }{2007}]{DBpedia2007}
+S{\"o}ren Auer, Christian Bizer, Georgi Kobilarov, Jens Lehmann, Richard
+  Cyganiak, and Zachary Ives.
+\newblock Dbpedia: A nucleus for a web of open data.
+\newblock In {\em Proceedings of {ISWC} 2007 + {ASWC} 2007}, pages 722--735,
+  2007.
+
+\bibitem[\protect\citeauthoryear{Bordes \bgroup \em et al.\egroup
+  }{2011}]{BordesWCB11}
+Antoine Bordes, Jason Weston, Ronan Collobert, and Yoshua Bengio.
+\newblock Learning structured embeddings of knowledge bases.
+\newblock In {\em Proc. of the AAAI}, 2011.
+
+\bibitem[\protect\citeauthoryear{Bordes \bgroup \em et al.\egroup
+  }{2013}]{BordesUGWY13}
+Antoine Bordes, Nicolas Usunier, Alberto Garc{\'{\i}}a{-}Dur{\'{a}}n, Jason
+  Weston, and Oksana Yakhnenko.
+\newblock Translating embeddings for modeling multi-relational data.
+\newblock In {\em NIPS}, pages 2787--2795, 2013.
+
+\bibitem[\protect\citeauthoryear{Denis~KrompaB and
+  Tresp}{2015}]{typeconstrains}
+Stephan~Baier Denis~KrompaB and Volker Tresp.
+\newblock Type-constrained representation learning in knowledge graphs.
+\newblock In {\em Proc. of the ISWC}, 2015.
+
+\bibitem[\protect\citeauthoryear{Feng \bgroup \em et al.\egroup
+  }{2016}]{FengHYZ16}
+Jun Feng, Minlie Huang, Yang Yang, and Xiaoyan Zhu.
+\newblock Gake: Graph aware knowledge embedding.
+\newblock In {\em COLING}, pages 641--651, 2016.
+
+\bibitem[\protect\citeauthoryear{Guoliang~Ji and Zhao}{2015}]{TransD}
+Liheng Xu Kang~Liu Guoliang~Ji, Shizhu~He and Jun Zhao.
+\newblock Knowledge graph embedding via dynamicmapping matrix.
+\newblock In {\em Proc. of ACL}, pages 687--696, 2015.
+
+\bibitem[\protect\citeauthoryear{Jiacheng~Xu and Huang}{2017}]{embeddingtext}
+Kan~Chen Jiacheng~Xu, Xipeng~Qiu and Xuanjing Huang.
+\newblock Knowledge graph representation with jointly structural and textual
+  encoding.
+\newblock In {\em Proc. of IJCAI}, pages 1318--1324, 2017.
+
+\bibitem[\protect\citeauthoryear{Lin \bgroup \em et al.\egroup
+  }{2015a}]{LinLLSRL15}
+Yankai Lin, Zhiyuan Liu, Huan{-}Bo Luan, Maosong Sun, Siwei Rao, and Song Liu.
+\newblock Modeling relation paths for representation learning of knowledge
+  bases.
+\newblock In {\em Proc. of EMNLP}, pages 705--714, 2015.
+
+\bibitem[\protect\citeauthoryear{Lin \bgroup \em et al.\egroup
+  }{2015b}]{LinLSLZ15}
+Yankai Lin, Zhiyuan Liu, Maosong Sun, Yang Liu, and Xuan Zhu.
+\newblock Learning entity and relation embeddings for knowledge graph
+  completion.
+\newblock In {\em Proc. of AAAI}, pages 2181--2187, 2015.
+
+\bibitem[\protect\citeauthoryear{Mikolov \bgroup \em et al.\egroup
+  }{2013}]{DBLP:conf/nips/MikolovSCCD13}
+Tomas Mikolov, Ilya Sutskever, Kai Chen, Gregory~S. Corrado, and Jeffrey Dean.
+\newblock Distributed representations of words and phrases and their
+  compositionality.
+\newblock In {\em NIPS}, pages 3111--3119, 2013.
+
+\bibitem[\protect\citeauthoryear{Mitchell \bgroup \em et al.\egroup
+  }{2015}]{NELL2015}
+Tom~M. Mitchell, William~W. Cohen, Estevam R.~Hruschka Jr., and et~al.
+\newblock Never-ending learning.
+\newblock In {\em Proceedings of the Twenty-Ninth {AAAI} Conference on
+  Artificial Intelligence, January 25-30, 2015, Austin, Texas, {USA.}}, pages
+  2302--2310, 2015.
+
+\bibitem[\protect\citeauthoryear{Nickel \bgroup \em et al.\egroup
+  }{2011}]{NickelTK11}
+Maximilian Nickel, Volker Tresp, and Hans{-}Peter Kriegel.
+\newblock A three-way model for collective learning on multi-relational data.
+\newblock In {\em Proc. of ICML}, pages 809--816, 2011.
+
+\bibitem[\protect\citeauthoryear{Nickel \bgroup \em et al.\egroup
+  }{2016}]{NickelRP16}
+Maximilian Nickel, Lorenzo Rosasco, and Tomaso~A. Poggio.
+\newblock Holographic embeddings of knowledge graphs.
+\newblock In {\em Proc. of AAAI}, pages 1955--1961, 2016.
+
+\bibitem[\protect\citeauthoryear{Socher \bgroup \em et al.\egroup
+  }{2013}]{SocherCMN13}
+Richard Socher, Danqi Chen, Christopher~D. Manning, and Andrew~Y. Ng.
+\newblock Reasoning with neural tensor networks for knowledge base completion.
+\newblock In {\em NIPS}, pages 926--934, 2013.
+
+\bibitem[\protect\citeauthoryear{Suchanek \bgroup \em et al.\egroup
+  }{2007}]{Yago2007}
+Fabian~M. Suchanek, Gjergji Kasneci, and Gerhard Weikum.
+\newblock Yago: A core of semantic knowledge.
+\newblock In {\em Proceedings of {WWW} 2007}, pages 697--706, 2007.
+
+\bibitem[\protect\citeauthoryear{Toutanova~K}{2016}]{Toutanova16}
+Yih W et~al. Toutanova~K, Lin~V.
+\newblock Compositional learning of embeddings for relation paths in knowledge
+  base and text.
+\newblock In {\em Proc. of ACL}, pages 1120--1136, 2016.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2014a}]{DBLP:conf/emnlp/WangZFC14}
+Zhen Wang, Jianwen Zhang, Jianlin Feng, and Zheng Chen.
+\newblock Knowledge graph and text jointly embedding.
+\newblock In {\em Proc. of EMNLP}, pages 1591--1601, 2014.
+
+\bibitem[\protect\citeauthoryear{Wang \bgroup \em et al.\egroup
+  }{2014b}]{WangZFC14}
+Zhen Wang, Jianwen Zhang, Jianlin Feng, and Zheng Chen.
+\newblock Knowledge graph embedding by translating on hyperplanes.
+\newblock In {\em Proc. of AAAI}, pages 1112--1119, 2014.
+
 \end{thebibliography}
