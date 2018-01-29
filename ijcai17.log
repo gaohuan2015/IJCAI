@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  15 JAN 2018 20:11
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2017.10.7)  24 JAN 2018 17:34
 entering extended mode
 **C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
 (C:/Users/gaohu/Desktop/IJCAI-18/IJCAI/ijcai17.tex
@@ -460,13 +460,29 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 82.
+Missing character: There is no £ in font ptmr7t!
+Missing character: There is no ¬ in font ptmr7t!
 
-Underfull \hbox (badness 3281) in paragraph at lines 84--85
-[]\OT1/ptm/m/n/10 Because rep-re-sen-ta-tion learn-ing of knowl-edge
+Underfull \hbox (badness 5696) in paragraph at lines 84--85
+[]\OT1/ptm/m/n/10 Knowledge graph em-bed-ding has in-creas-ing-
  []
 
-(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\intro.tex [1{C:/CTEX/UserData/pdftex/con
-fig/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+
+Underfull \hbox (badness 1888) in paragraph at lines 84--85
+\OT1/ptm/m/n/10 ly gained at-ten-tion for s-ta-tis-ti-cal mod-el-ing of
+ []
+
+(C:\Users\gaohu\Desktop\IJCAI-18\IJCAI\intro.tex
+Underfull \hbox (badness 7362) in paragraph at lines 8--9
+[]\OT1/ptm/m/n/10 In or-der to u-ti-lize the struc-ture in-for-ma-tion, we
+ []
+
+
+Underfull \hbox (badness 1102) in paragraph at lines 8--9
+\OT1/ptm/m/n/10 present a nov-el ap-proach to em-bed a knowl-edge graph
+ []
+
+[1{C:/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
 
@@ -479,7 +495,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
 
-<pic1.png, id=80, 417.81094pt x 246.9225pt>
+<pic1.png, id=86, 417.81094pt x 246.9225pt>
 File: pic1.png Graphic file (type png)
  <use pic1.png>
 Package pdftex.def Info: pic1.png used on input line 9.
@@ -527,7 +543,7 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 95.
 (C:\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 ) [4] [5]
-<pic2.png, id=192, 645.41125pt x 457.71pt>
+<pic2.png, id=201, 645.41125pt x 457.71pt>
 File: pic2.png Graphic file (type png)
  <use pic2.png>
 Package pdftex.def Info: pic2.png used on input line 157.
@@ -619,9 +635,9 @@ TeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/CTEX/MiKTeX/fonts/type1/
 urw/courier/ucrr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/CTE
 X/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/CTEX/MiKTeX/fonts/type1/urw/times
 /utmri8a.pfb>
-Output written on ijcai17.pdf (8 pages, 370398 bytes).
+Output written on ijcai17.pdf (8 pages, 372376 bytes).
 PDF statistics:
- 338 PDF objects out of 1000 (max. 8388607)
+ 347 PDF objects out of 1000 (max. 8388607)
  64 named destinations out of 1000 (max. 500000)
  107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

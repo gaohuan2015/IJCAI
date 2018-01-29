@@ -56,14 +56,14 @@ P(r,t|C_P(h, t), h;\Theta) \!=\! \frac {\exp(g_P(r,t, C_P(h, t)))} {\sum_{r' \in
 \end{equation}
 \end{small}
 
-where $g_P(\cdot, \cdot)$ is a function of correlation among an arbitrary entity $t'$,an arbitrary relation $r'$ and path context of the specific entity pair $(h,t)$. Similar to the neighbor context, given a triple $<h,r,t>$ different pathes in a path context $C_P(h, t)$ have different power of influence the triple. For example when predicting the entity $Englis$, relations like $locate\_in\_Country$ will have less attentions, and the relation $Speak\_Language$  will have greater attention to represent $Engilsh$. In order to obtain $g_P(\cdot, \cdot)$, we firstly calculate the correlation $b_i$ between path $p_i$ in $C_P(h, t)$ and a tail entity:
+where $g_P(\cdot, \cdot)$ is a function of correlation among an arbitrary entity $t'$,an arbitrary relation $r'$ and path context of the specific entity pair $(h,t)$. Similar to the neighbor context, given a triple $<h,r,t>$ different paths in a path context $C_P(h, t)$ have different power of influence the triple. For example when predicting the entity $Englis$, relations like $locate\_in\_Country$ will have less attentions, and the relation $Speak\_Language$  will have greater attention to represent $Engilsh$. In order to obtain $g_P(\cdot, \cdot)$, we firstly calculate the correlation $b_i$ between path $p_i$ in $C_P(h, t)$ and a tail entity:
 \begin{equation}\label{f2}
 b_i = \|\mathbf{h} + \mathbf{p_i} - \mathbf{t}\|
 \end{equation}
 
 Where $\bm{\mathrm{p_i}}$ composes all relations in $p_i$ into a single vector by summing over all their embeddings and this approach is also used in PTransE ~\cite{LinLLSRL15}. For example, for path $p_i=(r_{m_1}, \cdots, r_{m_i})$, the embedding of it is $\bm{\mathrm{p}}_i = \bm{\mathrm{r}}_{m_1} + \cdots + \bm{\mathrm{r}}_{m_i}$. Eq.~\eqref{f2} has a similar meaning with Eq.~\eqref{a_i}.
 
-We then choose important pathes from $C_P(h, t)$ through the attention mechanisms. For each $p_i$, the weight $\beta_{i}$ is then defined as
+We then choose important paths from $C_P(h, t)$ through the attention mechanisms. For each $p_i$, the weight $\beta_{i}$ is then defined as
 \begin{align}\label{beta_i}
 \beta_{i} = \frac {\exp(-b_i)} {\sum_j \exp(-b_j)}
 \end{align}

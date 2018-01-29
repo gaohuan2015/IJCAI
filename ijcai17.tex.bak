@@ -1,34 +1,34 @@
-%%%% ijcai17.tex
+\typeout{IJCAI-18 Instructions for Authors}
 
-\typeout{IJCAI-17 Instructions for Authors}
-
-% These are the instructions for authors for IJCAI-17.
+% These are the instructions for authors for IJCAI-18.
 % They are the same as the ones for IJCAI-11 with superficical wording
 %   changes only.
 
 \documentclass{article}
-% The file ijcai17.sty is the style file for IJCAI-17 (same as ijcai07.sty).
-\usepackage{ijcai17}
+\pdfpagewidth=8.5in
+\pdfpageheight=11in
+% The file ijcai18.sty is the style file for IJCAI-18 (same as ijcai08.sty).
+\usepackage{ijcai18}
 
 % Use the postscript times font!
 \usepackage{times}
-\usepackage{booktabs} % For formal tables
+\usepackage{xcolor}
+\usepackage{soul}
+\usepackage[small]{caption}
+
 \usepackage{verbatim}
 \usepackage{fancynum}
-\usepackage{graphicx}
 \usepackage{bm}
 \usepackage{amssymb}
-\usepackage{tikz}
 %\usetikzlibrary{bayesnet}
-\usepackage{diagbox}
 \usepackage{latexsym}
 \usepackage{graphicx}
 \usepackage{graphics}
 \usepackage{amsmath}
-\usepackage{natbib}
 \usepackage{amsthm}       %% The amsthm package provides extended theorem environments
 \usepackage{multirow}
 \usepackage{algorithmic}
+
 \newcommand{\dir}{\text{Dir}}
 \newcommand{\mult}{\text{Multi}}
 \newtheorem{example}{Example}
@@ -81,7 +81,7 @@ Southeast University, Nanjing, China  \\
 \maketitle
 
 \begin{abstract}
-Because representation learning of knowledge graphs increasingly adds value to various applications that require machines to recognize and understand queries and their semantics, Knowledge graph embedding has increasingly gained attention for statistical modeling of knowledge graph. Existing methods treat each triple independent, but, cannot handle the graph structural information, such as connectivity pathes and neighbor entities, which contains rich information for inference. In this paper, we proposes an Attentional-Triple-Context-based knowledge Embedding model(ATCE). For each triple, two kinds of graph structural information are considered as its context, which we refer to \emph{as triple context} : 1) Neighbor context is the outgoing relations and neighboring entities of an entity; 2) Path context is connective paths between a pair of entities, both of which contains rich useful and unrelated information for entities and relations. ATCE learns embedding for entities and relations with an attention mechanism which is designed to choose the useful inference information in triple context. The experimental results show that our methods outperforms the state-of-the-art methods for link prediction and triple classification.
+Knowledge graph embedding has increasingly gained attention for statistical modeling of knowledge graph£¬Because representation learning of knowledge graphs increasingly adds value to various applications that require machines to recognize and understand queries and their semantics. Existing methods treat each triple independent, but, cannot handle the graph structural information, such as connectivity pathes and neighbor entities, which contains rich information for inference. In this paper, we proposes an Attentional-Triple-Context-based knowledge Embedding model(ATCE). For each triple, two kinds of graph structural information are considered as its context, which we refer to \emph{as triple context} : 1) Neighbor context is the outgoing relations and neighboring entities of an entity; 2) Path context is connective paths between a pair of entities, both of which contains rich useful and unrelated information for entities and relations. ATCE learns embedding for entities and relations with an attention mechanism which is designed to choose the useful inference information in triple context. The experimental results show that our methods outperforms the state-of-the-art methods for link prediction and triple classification.
 \end{abstract}
 
 
@@ -96,8 +96,7 @@ Because representation learning of knowledge graphs increasingly adds value to v
 
 %% The file named.bst is a bibliography style file for BibTeX 0.99c
 \bibliographystyle{named}
-%\bibliographystyle{unsrt}
-\bibliography{bibOfTex}
+\bibliography{ijcai18}
 
 \end{document}
 
